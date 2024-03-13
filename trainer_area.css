@@ -36,8 +36,8 @@ body {
 
 .home_button_area {
     grid-area: 1 / 4 / 1 / 5;
-    background-color: green;
-    opacity: 0.5;
+    align-self: center;
+    justify-self: center;
 }
 
 .image_area {
@@ -99,4 +99,21 @@ body {
     border-style: solid;
 }
 
+.home_button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.home_button a {
+    color: white;
+}
+
+.home_button a:visited {
+    color: white;
+}
+
+.home_button a:hover{
+    color: antiquewhite;
+}
 
