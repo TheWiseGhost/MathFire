@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --orangered: #ED4C33;
+    --lightorange: #FD9C33;
+    --paleorange: #FF9977;
+    --orange: #FF6B56;
+}
+
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.main {
+    display: grid;
+    height: 45vw;
+    grid-template-columns: 3fr 0.6fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3.4fr 1.6fr;
+    background-image: urL('MathHeroV3.png');
+    width: 100vw;
+    padding-top: 0;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.logo {
+    grid-area: 1 / 1 / 1 / 2 ;
+    padding-left: 5rem;
+    padding-top: 2rem;
+}
+
+.portal {
+    grid-area: 1 / 3 / 1 / 4;
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+}
+
+.competition {
+    grid-area: 1 / 4 / 1 / 5;
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+}
+
+.about {
+    grid-area: 1 / 5 / 1 / 6;
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+}
+
+.login {
+    grid-area: 1 / 6 / 1 / 7;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.hero {
+    grid-area: 3 / 1 / 3 / 1;
+    justify-self: center;
+}
+
+.navbar_button {
+    background-color: transparent;
+    color: white;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.navbar_button a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar_button a:visited {
+    text-decoration: none;
+}
+
+.navbar_button a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+
+.login_button {
+    background-color: transparent;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: none;
+    background-color: var(--paleorange);
+    padding: 0.5rem 1rem;
+}
+
+.login_button a {
+    color: white;
+    text-decoration: none;
+}
+
+.login_button:hover {
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+
+/* BLOB BUTTON */
+*, *:before, *:after {
+	 box-sizing: border-box;
+	 margin: 0;
+	 padding: 0;
+}
+ .buttons {
+	 margin-top: 50px;
+	 text-align: center;
+	 border-radius: 30px;
+}
+ .blob-btn {
+	 z-index: 1;
+	 position: relative;
+	 padding: 20px 42px;
+	 margin-bottom: 30px;
+	 text-align: center;
+     color: var(--orangered);
+	 font-size: 16px;
+	 font-weight: bold;
+	 background-color: transparent;
+	 outline: none;
+	 border: none;
+	 transition: color 0.5s;
+	 cursor: pointer;
+	 border-radius: 30px;
+     font-size: 18px;
+     font-family: 'Kumbh Sans', sans-serif;
+}
+ .blob-btn:before {
+	 content: "";
+	 z-index: 1;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 border: 3px solid var(--orangered);
+	 border-radius: 30px;
+}
+ .blob-btn:after {
+	 content: "";
+	 z-index: -2;
+	 position: absolute;
+	 left: 3px;
+	 top: 3px;
+	 width: 100%;
+	 height: 100%;
+	 transition: all 0.3s 0.2s;
+	 border-radius: 30px;
+}
+ .blob-btn:hover {
+	 color: #fff;
+	 border-radius: 30px;
+}
+ .blob-btn:hover:after {
+	 transition: all 0.3s;
+	 left: 0;
+	 top: 0;
+	 border-radius: 30px;
+}
+
+.blob-btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.blob-btn a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+ .blob-btn__inner {
+	 z-index: -1;
+	 overflow: hidden;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 border-radius: 30px;
+	 background: #fff;
+}
+ .blob-btn__blobs {
+	 position: relative;
+	 display: block;
+	 height: 100%;
+	 filter: url('#goo');
+}
+ .blob-btn__blob {
+	 position: absolute;
+	 top: 2px;
+	 width: 25%;
+	 height: 100%;
+	 background: var(--orangered);
+	 border-radius: 100%;
+	 transform: translate3d(0, 150%, 0) scale(1.7);
+	 transition: transform 0.45s;
+}
+ @supports (filter: url('#goo')) {
+	 transform: translate3d(0, 150%, 0) scale(1.4);
+}
+ .blob-btn__blob:nth-child(1) {
+	 left: 0%;
+	 transition-delay: 0s;
+}
+ .blob-btn__blob:nth-child(2) {
+	 left: 30%;
+	 transition-delay: 0.08s;
+}
+ .blob-btn__blob:nth-child(3) {
+	 left: 60%;
+	 transition-delay: 0.16s;
+}
+ .blob-btn__blob:nth-child(4) {
+	 left: 90%;
+	 transition-delay: 0.24s;
+}
+ .blob-btn:hover .blob-btn__blob {
+	 transform: translateZ(0) scale(1.7);
+}
+ @supports (filter: url('#goo')) {
+	 transform: translateZ(0) scale(1.4);
+}
+
+
