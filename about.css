@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --orangered: #E63429;
+    --lightorange: #FD9C33;
+}
+
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.about {
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr 1fr 0.5fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    height: 43vw;
+    padding-top: 0;
+}
+
+.home_area {
+    grid-area: 1 / 2 / 1 / 2;
+    opacity: 0.5;
+    background-color: black;
+}
+
+.image_area {
+    grid-area: 2 / 1 / 4 / 2;
+    opacity: 0.5;
+    background-color: blue;
+}
+
+.name_area {
+    grid-area: 4 / 1 / 5 / 2;
+    opacity: 0.5;
+    background-color: green;
+}
+
+.description {
+    grid-area: 5 / 1 / 7 / 2;
+    opacity: 0.5;
+    background-color: red;
+}
+
+.about_title {
+    grid-area: 2 / 2 / 3 / 3;
+    opacity: 0.5;
+    background-color: coral;
+}
+
+.site_description {
+    grid-area: 3 / 2 / 6 / 3;
+    opacity: 0.5;
+    background-color: purple;
+}
+
+.links {
+    grid-area: 6 / 2 / 7 / 3;
+    opacity: 0.5;
+    background-color: yellow;
+}
+
+
