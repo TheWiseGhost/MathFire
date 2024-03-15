@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400i');
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -19,36 +19,52 @@ body {
     grid-template-columns: 1fr 1fr;
     height: 43vw;
     padding-top: 0;
+    background-size: cover;
+
 }
 
 .home_area {
     grid-area: 1 / 2 / 1 / 2;
-    opacity: 0.5;
-    background-color: black;
 }
 
 .image_area {
     grid-area: 2 / 1 / 4 / 2;
-    opacity: 0.5;
-    background-color: blue;
+    justify-self: center;
+}
+
+.about_img {
+    width: 17rem;
+    border-radius: 20rem;
 }
 
 .name_area {
     grid-area: 4 / 1 / 5 / 2;
-    opacity: 0.5;
-    background-color: green;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 2.5rem;
+    color: var(--orangered);
+    justify-self: center;
+    align-self: center;
 }
 
 .description {
     grid-area: 5 / 1 / 7 / 2;
-    opacity: 0.5;
-    background-color: red;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: black;
+    font-style: normal;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 0.8rem;
+    text-align: center;
 }
 
 .about_title {
     grid-area: 2 / 2 / 3 / 3;
-    opacity: 0.5;
-    background-color: coral;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 3rem;
+    justify-self: center;
+    align-self: center;
+    color: #F93943;
 }
 
 .site_description {
@@ -62,5 +78,22 @@ body {
     opacity: 0.5;
     background-color: yellow;
 }
+
+
+.logo {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	display: block;
+	z-index: 100;
+	transition: all 250ms linear;
+}
+.logo img {
+	height: 34px;
+	width: auto;
+	display: block;
+    margin-right: 3rem;
+}
+
 
 
