@@ -311,8 +311,8 @@ path.two {
 
 .wrapper2 a{
   display: block;
-  width: 250px;
-  height: 50px;
+  width: 15rem;
+  height: 3rem;
   line-height: 50px;
   font-weight: bold;
   text-decoration: none;

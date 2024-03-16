@@ -16,15 +16,14 @@ body {
 .about {
     display: grid;
     grid-template-rows: 1fr 2fr 2fr 1fr 0.5fr 2fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
     height: 43vw;
     padding-top: 0;
-    background-size: cover;
-
+    margin-right: 1rem;
 }
 
 .home_area {
-    grid-area: 1 / 2 / 1 / 2;
+    grid-area: 1 / 2 / 1 / 5;
 }
 
 .image_area {
@@ -49,7 +48,7 @@ body {
 .description {
     grid-area: 5 / 1 / 7 / 2;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.27rem;
     color: black;
     font-style: normal;
     margin-left: 3rem;
@@ -59,7 +58,7 @@ body {
 }
 
 .about_title {
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: 2 / 2 / 3 / 5;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 3rem;
     justify-self: center;
@@ -68,15 +67,35 @@ body {
 }
 
 .site_description {
-    grid-area: 3 / 2 / 6 / 3;
-    opacity: 0.5;
-    background-color: purple;
+    grid-area: 3 / 2 / 6 / 5;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
-.links {
+.link1 {
     grid-area: 6 / 2 / 7 / 3;
-    opacity: 0.5;
-    background-color: yellow;
+    align-self: center;
+    padding-bottom: 3rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 0.8rem;
+}
+
+.link2 {
+    grid-area: 6 / 3 / 7 / 4;
+    align-self: center;
+    padding-bottom: 3rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 0.8rem;
+}
+
+.link3 {
+    grid-area: 6 / 4 / 7 / 5;
+    align-self: center;
+    padding-bottom: 3rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 0.8rem;
 }
 
 
@@ -96,4 +115,63 @@ body {
 }
 
 
+.wrapper2 {
+    position: fixed;
+    margin-left: 2rem;
+}
+
+.link_wrapper{
+  position: relative;
+}
+
+.wrapper2 a{
+  display: block;
+  width: 7rem;
+  height: 0.2rem;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: var(--orangered);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid var(--orangered);
+  transition: all .35s;
+  padding-bottom: 3rem;
+}
+
+.icon1{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon1 svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: var(--orangered);
+  transition: all .35s;
+}
+
+.wrapper2 a:hover{
+  width: 9rem;
+  border: 3px solid var(--orangered);
+  background: transparent;
+  color: var(--orangered);
+}
+
+.wrapper2 a:hover + .icon1{
+  border: 3px solid var(--orangered);
+  right: -25%;
+}
 
