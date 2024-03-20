@@ -99,22 +99,6 @@ body {
 }
 
 
-.logo {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	display: block;
-	z-index: 100;
-	transition: all 250ms linear;
-}
-.logo img {
-	height: 34px;
-	width: auto;
-	display: block;
-    margin-right: 3rem;
-}
-
-
 .wrapper2 {
     position: fixed;
     margin-left: 2rem;
@@ -173,5 +157,10 @@ body {
 .wrapper2 a:hover + .icon1{
   border: 3px solid var(--orangered);
   right: -25%;
+}
+
+
+.logo:hover {
+    cursor: pointer;
 }
 

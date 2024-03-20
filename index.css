@@ -19,7 +19,7 @@ body {
     height: 45vw;
     grid-template-columns: 3fr 0.6fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 3.4fr 1.6fr;
-    background-image: urL('MathHeroV3.png');
+    background-image: urL('MathHero.png');
     width: 100vw;
     padding-top: 0;
     overflow: hidden;
@@ -28,8 +28,8 @@ body {
 
 .logo {
     grid-area: 1 / 1 / 1 / 2 ;
-    padding-left: 5rem;
-    padding-top: 2rem;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
 }
 
 .portal {
