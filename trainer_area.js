@@ -39,7 +39,7 @@ async function update(url){
       div_main.innerHTML = `
         <div class='trainer_area'>
             <div class='problem_type_title'>
-                Two Pole
+                ${problem.problemType}
             </div>
 
             <div class='home_button_area'>
@@ -49,11 +49,11 @@ async function update(url){
             </div>
 
             <div class='image_area'>
-                <img class='problem_image' src="Sample_Img.png">
+                <img class='problem_image' src="${img}">
             </div>
 
             <div class='problem_text_area'>
-
+                ${problem.problem}
             </div>
 
             <div class='answer_area'>
