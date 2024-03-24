@@ -37,7 +37,7 @@ async function update(url){
       answer = problem.answer;
       div_main = document.createElement('div');
       div_main.innerHTML = `
-        <div class='trainer_area'>
+        <div class='trainer_area' id='trainer_area'>
             <div class='problem_type_title'>
                 ${problem.problemType}
             </div>
@@ -58,11 +58,11 @@ async function update(url){
 
             <div class='answer_area'>
                 Answer:
-                <input class='answer_input'>
+                <input class='answer_input' id='answer_input'>
             </div>
 
             <div class='submit_button_area'>
-                 <a href='trainer_portal.html'>
+                 <a href='#'>
                     <button class="blob-btn2" id='submit'>
                         Submit
                         <span class="blob-btn2__inner">
@@ -78,7 +78,7 @@ async function update(url){
             </div>
 
             <div class='refresh_button_area'>
-                 <a href='trainer_portal.html'>
+                 <a href='#'>
                     <button class="blob-btn" id='refresh'>
                         Refresh
                         <span class="blob-btn__inner">
@@ -93,15 +93,16 @@ async function update(url){
                 </a>
             </div>
 
-            <div class='result_area'>
+            <div class='result_area' id='result_area'>
 
             </div>
+        </div>
       `;
 
       main.appendChild(div_main);
       refresh_button = document.getElementById('refresh');
       refresh_button.addEventListener('click', refresh_function);
-      result_area = document.getElementById('problem_text_area')
+      result_area = document.getElementById('result_area')
 
       function refresh_function() {
         main.innerHTML = ''
@@ -118,8 +119,8 @@ async function update(url){
         } else {
           result_area.innerHTML = 'Incorrect!';
         }
-
       }
+
   });
 }
 
