@@ -9,7 +9,9 @@ let result_area;
 const main = document.getElementById('trainer_area');
 let answer;
 
-update(APILINK);
+if (window.problem_req.message == 'Challenge Problems') {
+    update(APILINK);
+}
 
 async function set_problem(url) {
   let p_arr = [];
@@ -27,7 +29,7 @@ async function set_problem(url) {
 
 async function update(url){
   let id = await set_problem(url);
-  url = url + id;
+  url = url + "challenges/" + id;
   console.log(url);
   console.log("id = " + id)
   fetch(url).then(res => res.json())
@@ -39,7 +41,7 @@ async function update(url){
       div_main.innerHTML = `
         <div class='trainer_area' id='trainer_area'>
             <div class='problem_type_title'>
-                ${problem.problemType}
+                ${window.problem_req.message}
             </div>
 
             <div class='home_button_area'>
