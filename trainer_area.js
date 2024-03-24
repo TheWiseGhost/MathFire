@@ -1,6 +1,6 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://1bb3d6a4-2ead-4c01-bf15-9a33d15ae568-00-2ljpumvkrxrk0.picard.replit.dev/'
+const APILINK = 'http://localhost:8000/';
 
 let refresh_button;
 let submit_button;
@@ -63,7 +63,7 @@ async function update(url){
 
             <div class='submit_button_area'>
                  <a href='trainer_portal.html'>
-                    <button class="blob-btn2">
+                    <button class="blob-btn2" id='submit'>
                         Submit
                         <span class="blob-btn2__inner">
                           <span class="blob-btn2__blobs">
@@ -79,7 +79,7 @@ async function update(url){
 
             <div class='refresh_button_area'>
                  <a href='trainer_portal.html'>
-                    <button class="blob-btn">
+                    <button class="blob-btn" id='refresh'>
                         Refresh
                         <span class="blob-btn__inner">
                           <span class="blob-btn__blobs">
