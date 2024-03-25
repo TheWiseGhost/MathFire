@@ -7,7 +7,7 @@ const herons = document.getElementById('herons');
 const x_intercept = document.getElementById('x_intercept');
 const inverse_functions = document.getElementById('inverse_functions');
 const challenge = document.getElementById('challenge');
-window.problem_req = {message: ''};
+let current = '';
 
 geo.addEventListener('click', update('Geometry'));
 alegbra.addEventListener('click', update('Alegbra'));
@@ -21,5 +21,5 @@ challenge.addEventListener('click', update('Challenge Problems'));
 
 
 function update(clicked) {
-    window.problem_req.message = clicked;
+    current = clicked;
 }

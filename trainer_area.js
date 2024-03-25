@@ -9,9 +9,9 @@ let result_area;
 const main = document.getElementById('trainer_area');
 let answer;
 
-if (window.problem_req.message == 'Challenge Problems') {
-    update(APILINK);
-}
+
+update(APILINK)
+
 
 async function set_problem(url) {
   let p_arr = [];
@@ -41,7 +41,7 @@ async function update(url){
       div_main.innerHTML = `
         <div class='trainer_area' id='trainer_area'>
             <div class='problem_type_title'>
-                ${window.problem_req.message}
+                Challenge Problems
             </div>
 
             <div class='home_button_area'>
