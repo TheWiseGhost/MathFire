@@ -41,7 +41,7 @@ async function update(url){
       div_main.innerHTML = `
         <div class='trainer_area' id='trainer_area'>
             <div class='problem_type_title'>
-                Challenge Problems
+                ${current}
             </div>
 
             <div class='home_button_area'>

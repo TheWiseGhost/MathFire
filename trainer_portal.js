@@ -7,7 +7,7 @@ const herons = document.getElementById('herons');
 const x_intercept = document.getElementById('x_intercept');
 const inverse_functions = document.getElementById('inverse_functions');
 const challenge = document.getElementById('challenge');
-let current = '';
+var current = '1212';
 
 geo.addEventListener('click', update('Geometry'));
 alegbra.addEventListener('click', update('Alegbra'));
