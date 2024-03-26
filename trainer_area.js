@@ -8,6 +8,13 @@ let result_area;
 
 const main = document.getElementById('trainer_area');
 let answer;
+let problem_type = localStorage.getItem('current_problem_type')
+
+
+if (problem_type == 'Challenge Problems') {
+    update(APILINK)
+}
+
 
 async function set_problem(url) {
   let p_arr = [];
@@ -22,9 +29,8 @@ async function set_problem(url) {
   return problemId;
 }
 
-
 async function update(url){
-  let problem_type = current;
+
   let id = await set_problem(url);
   url = url + "challenges/" + id;
   console.log(url);
@@ -123,4 +129,3 @@ async function update(url){
   });
 }
 
-update(APILINK)

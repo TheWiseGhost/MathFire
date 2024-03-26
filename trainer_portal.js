@@ -7,20 +7,17 @@ const herons = document.getElementById('herons');
 const x_intercept = document.getElementById('x_intercept');
 const inverse_functions = document.getElementById('inverse_functions');
 const challenge = document.getElementById('challenge');
-var current = 'my_null';
 
-geo.addEventListener('click', () => {update_curr('Geometry')});
-algebra.addEventListener('click', () => {update_curr('Algebra')});
-centroid.addEventListener('click', () => {update_curr('Centroid')});
-angle_bisector.addEventListener('click', () => {update_curr('Angle Bisector')});
-two_pole.addEventListener('click', () => {update_curr('Two Pole')});
-herons.addEventListener('click', () => {update_curr("Heron's Formula")});
-x_intercept.addEventListener('click', () => {update_curr('X-intercept')});
-inverse_functions.addEventListener('click', () => {update_curr('Inverse Functions')});
-challenge.addEventListener('click', () => {update_curr('Challenge Problems')});
-
+if (geo) geo.onclick = () => { update_curr('Geometry') };
+if (algebra) algebra.onclick = () => { update_curr('Algebra') };
+if (centroid) centroid.onclick = () => { update_curr('Centroid') };
+if (angle_bisector) angle_bisector.onclick = () => { update_curr('Angle Bisector') };
+if (two_pole) two_pole.onclick = () => { update_curr('Two Pole') };
+if (herons) herons.onclick = () => { update_curr("Heron's Formula") };
+if (x_intercept) x_intercept.onclick = () => { update_curr('X-intercept') };
+if (inverse_functions) inverse_functions.onclick = () => { update_curr('Inverse Functions') };
+if (challenge) challenge.onclick = () => { update_curr('Challenge Problems') };
 
 function update_curr(clicked) {
-    current = clicked;
+    localStorage.setItem('current_problem_type', clicked)
 }
-
