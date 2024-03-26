@@ -9,10 +9,6 @@ let result_area;
 const main = document.getElementById('trainer_area');
 let answer;
 
-
-update(APILINK)
-
-
 async function set_problem(url) {
   let p_arr = [];
   url = url + "action/getting_problems";
@@ -28,6 +24,7 @@ async function set_problem(url) {
 
 
 async function update(url){
+  let problem_type = current;
   let id = await set_problem(url);
   url = url + "challenges/" + id;
   console.log(url);
@@ -41,7 +38,7 @@ async function update(url){
       div_main.innerHTML = `
         <div class='trainer_area' id='trainer_area'>
             <div class='problem_type_title'>
-                ${current}
+                ${problem_type}
             </div>
 
             <div class='home_button_area'>
@@ -126,4 +123,4 @@ async function update(url){
   });
 }
 
-
+update(APILINK)
