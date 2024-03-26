@@ -1,5 +1,5 @@
 const geo = document.getElementById('geo');
-const algebra = document.getElementById('alegbra');
+const algebra = document.getElementById('algebra');
 const centroid = document.getElementById('centroid');
 const angle_bisector = document.getElementById('angle_bisector');
 const two_pole = document.getElementById('two_pole');
@@ -10,7 +10,7 @@ const challenge = document.getElementById('challenge');
 var current = 'my_null';
 
 geo.addEventListener('click', () => {update_curr('Geometry')});
-alegbra.addEventListener('click', () => {update_curr('Alegbra')});
+algebra.addEventListener('click', () => {update_curr('Algebra')});
 centroid.addEventListener('click', () => {update_curr('Centroid')});
 angle_bisector.addEventListener('click', () => {update_curr('Angle Bisector')});
 two_pole.addEventListener('click', () => {update_curr('Two Pole')});
@@ -23,3 +23,4 @@ challenge.addEventListener('click', () => {update_curr('Challenge Problems')});
 function update_curr(clicked) {
     current = clicked;
 }
+
