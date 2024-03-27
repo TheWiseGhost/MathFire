@@ -12,120 +12,240 @@ let problem_type = localStorage.getItem('current_problem_type')
 
 
 if (problem_type == 'Challenge Problems') {
+    main.innerHTML = ''
     update(APILINK)
 }
 
+if (problem_type == 'Two Pole') {
+    function load() {
+        function two_pole_problem() {
+            let pole_a, pole_b, top_answer, bottom_answer, answer, return_arr;
+            pole_a = Math.round(Math.random() * 19) + 1;
+            pole_b = Math.round(Math.random() * 19) + 1;
 
-async function set_problem(url) {
-  let p_arr = [];
-  url = url + "action/getting_problems";
-  const res = await fetch(url);
-  const data = await res.json();
-  data.forEach((problem) => {
-    p_arr.push(problem._problemId);
-  });
-  let problemId = p_arr[Math.floor(Math.random() * p_arr.length)];
-  console.log(problemId);
-  return problemId;
+            top_answer = pole_a * pole_b;
+            bottom_answer = pole_a + pole_b;
+            answer = (pole_a * pole_b) / (pole_a + pole_b);
+
+            return_arr = [pole_a, pole_b, top_answer, bottom_answer, answer];
+            return return_arr;
+        }
+
+        let poles = two_pole_problem();
+        answer = poles[2].toString() + "/" + poles[3].toString();
+        let alt_answer = poles[4].toString();
+
+        let question = "Pole A = " + poles[0] + " and " + "Pole B = " + poles[1];
+
+        function check_answer() {
+            let input = document.getElementById('answer_input').value;
+            if (input == answer) {
+                return true;
+            } else if (input == alt_answer) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        let img = 'Two_Pole.png';
+        let div_main = document.createElement('div');
+        div_main.innerHTML = `
+            <div class='trainer_area' id='trainer_area'>
+                <div class='problem_type_title'>
+                    ${problem_type}
+                </div>
+
+                <div class='home_button_area'>
+                    <button class='home_button'>
+                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                    </button>
+                </div>
+
+                <div class='image_area'>
+                    <img class='problem_image' src="${img}">
+                </div>
+
+                <div class='problem_text_area'>
+                    ${question}
+                </div>
+
+                <div class='answer_area'>
+                    Answer:
+                    <input class='answer_input' id='answer_input'>
+                </div>
+
+                <div class='submit_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn2" id='submit'>
+                            Submit
+                            <span class="blob-btn2__inner">
+                              <span class="blob-btn2__blobs">
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='refresh_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn" id='refresh'>
+                            Refresh
+                            <span class="blob-btn__inner">
+                              <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='result_area' id='result_area'>
+
+                </div>
+            </div>
+        `;
+
+        main.appendChild(div_main);
+
+        let result_area = document.getElementById('result_area');
+
+        document.getElementById('submit').onclick = function () {
+            var correct = check_answer();
+            if (correct == true) {
+                result_area.textContent = "Correct!";
+            } else {
+                result_area.textContent = "Incorrect";
+            }
+        }
+
+        document.getElementById('refresh').onclick = function () {
+            main.innerHTML = '';
+            load();
+        }
+    }
+
+    load();
 }
 
-async function update(url){
 
-  let id = await set_problem(url);
-  url = url + "challenges/" + id;
-  console.log(url);
-  console.log("id = " + id)
-  fetch(url).then(res => res.json())
-  .then(function(problem) {
-      console.log(problem);
-      img = problem.img;
-      answer = problem.answer;
-      div_main = document.createElement('div');
-      div_main.innerHTML = `
-        <div class='trainer_area' id='trainer_area'>
-            <div class='problem_type_title'>
-                ${problem_type}
-            </div>
+// Code for backend needed in challenge problems
+async function set_problem(url) {
+    let p_arr = [];
+    url = url + "action/getting_problems";
+    const res = await fetch(url);
+    const data = await res.json();
+    data.forEach((problem) => {
+        p_arr.push(problem._problemId);
+    });
+    let problemId = p_arr[Math.floor(Math.random() * p_arr.length)];
+    console.log(problemId);
+    return problemId;
+}
 
-            <div class='home_button_area'>
-                 <button class='home_button'>
-                    <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
-                 </button>
-            </div>
+async function update(url) {
+    let id = await set_problem(url);
+    url = url + "challenges/" + id;
+    console.log(url);
+    console.log("id = " + id)
+    fetch(url)
+        .then(res => res.json())
+        .then(function (problem) {
+            console.log(problem);
+            img = problem.img;
+            answer = problem.answer;
+            div_main = document.createElement('div');
+            div_main.innerHTML = `
+                <div class='trainer_area' id='trainer_area'>
+                    <div class='problem_type_title'>
+                        ${problem_type}
+                    </div>
 
-            <div class='image_area'>
-                <img class='problem_image' src="${img}">
-            </div>
+                    <div class='home_button_area'>
+                        <button class='home_button'>
+                            <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        </button>
+                    </div>
 
-            <div class='problem_text_area'>
-                ${problem.problem}
-            </div>
+                    <div class='image_area'>
+                        <img class='problem_image' src="${img}">
+                    </div>
 
-            <div class='answer_area'>
-                Answer:
-                <input class='answer_input' id='answer_input'>
-            </div>
+                    <div class='problem_text_area'>
+                        ${problem.problem}
+                    </div>
 
-            <div class='submit_button_area'>
-                 <a href='#'>
-                    <button class="blob-btn2" id='submit'>
-                        Submit
-                        <span class="blob-btn2__inner">
-                          <span class="blob-btn2__blobs">
-                            <span class="blob-btn2__blob"></span>
-                            <span class="blob-btn2__blob"></span>
-                            <span class="blob-btn2__blob"></span>
-                            <span class="blob-btn2__blob"></span>
-                          </span>
-                        </span>
-                    </button>
-                </a>
-            </div>
+                    <div class='answer_area'>
+                        Answer:
+                        <input class='answer_input' id='answer_input'>
+                    </div>
 
-            <div class='refresh_button_area'>
-                 <a href='#'>
-                    <button class="blob-btn" id='refresh'>
-                        Refresh
-                        <span class="blob-btn__inner">
-                          <span class="blob-btn__blobs">
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                          </span>
-                        </span>
-                    </button>
-                </a>
-            </div>
+                    <div class='submit_button_area'>
+                        <a href='#'>
+                            <button class="blob-btn2" id='submit'>
+                                Submit
+                                <span class="blob-btn2__inner">
+                                    <span class="blob-btn2__blobs">
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                    </span>
+                                </span>
+                            </button>
+                        </a>
+                    </div>
 
-            <div class='result_area' id='result_area'>
+                    <div class='refresh_button_area'>
+                        <a href='#'>
+                            <button class="blob-btn" id='refresh'>
+                                Refresh
+                                <span class="blob-btn__inner">
+                                    <span class="blob-btn__blobs">
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                    </span>
+                                </span>
+                            </button>
+                        </a>
+                    </div>
 
-            </div>
-        </div>
-      `;
+                    <div class='result_area' id='result_area'>
 
-      main.appendChild(div_main);
-      refresh_button = document.getElementById('refresh');
-      refresh_button.addEventListener('click', refresh_function);
-      result_area = document.getElementById('result_area')
+                    </div>
+                </div>
+            `;
 
-      function refresh_function() {
-        main.innerHTML = ''
-        update(APILINK);
-      }
+            main.appendChild(div_main);
+            refresh_button = document.getElementById('refresh');
+            refresh_button.addEventListener('click', refresh_function);
+            result_area = document.getElementById('result_area')
 
-      submit_button = document.getElementById('submit');
-      submit_button.addEventListener('click', submit_function);
+            function refresh_function() {
+                main.innerHTML = ''
+                update(APILINK);
+            }
 
-      function submit_function() {
-        let input_answer = document.getElementById('answer_input').value;
-        if (input_answer == answer) {
-          result_area.innerHTML = 'Correct!';
-        } else {
-          result_area.innerHTML = 'Incorrect!';
-        }
-      }
+            submit_button = document.getElementById('submit');
+            submit_button.addEventListener('click', submit_function);
 
-  });
+            function submit_function() {
+                let input_answer = document.getElementById('answer_input').value;
+                if (input_answer == answer) {
+                    result_area.innerHTML = 'Correct!';
+                } else {
+                    result_area.innerHTML = 'Incorrect!';
+                }
+            }
+        });
 }
 
