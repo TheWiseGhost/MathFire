@@ -49,10 +49,14 @@ body {
 
 .problem_text_area {
     grid-area: 2 / 3 / 3 / 5;
-    background-color: lightblue;
-    opacity: 0.5;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.6rem;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 3rem;
 }
 
 .answer_area {
@@ -79,9 +83,11 @@ body {
 
 .result_area {
     grid-area: 5 / 3 / 6 / 5;
-    background-color: purple;
-    opacity: 0.5;
     font-family: 'Poppins', sans-serif;
+    align-self: center;
+    justify-self: center;
+    font-size: 2rem;
+    color: black;
 }
 
 
