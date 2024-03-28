@@ -111,7 +111,7 @@ if (problem_type == 'Geometry') {
                 coord_b = make_coordinate(centroid[2], centroid[5]);
                 coord_c = make_coordinate(centroid[3], centroid[6]);
 
-                let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c;
+                let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid.";
 
 
                 function check_answer() {
@@ -261,7 +261,7 @@ if (problem_type == 'Geometry') {
                 var angleb_arr = angleb_func();
                 var answer = angleb_arr[0];
 
-                let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3]
+                let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD."
 
 
                 function check_answer() {
@@ -292,7 +292,7 @@ if (problem_type == 'Geometry') {
                             <img class='problem_image' src="${img}">
                         </div>
 
-                        <div class='problem_text_area'>
+                        <div class='problem_text_area' style='font-size: 1.2rem'>
                             ${question}
                         </div>
 
@@ -382,7 +382,7 @@ if (problem_type == 'Geometry') {
                 answer = poles[2].toString() + "/" + poles[3].toString();
                 let alt_answer = poles[4].toString();
 
-                let question = "Pole A = " + poles[0] + " and " + "Pole B = " + poles[1];
+                let question = "Pole A = " + poles[0] + " and " + "Pole B = " + poles[1] + ". Find length of the green line.";
 
                 function check_answer() {
                     let input = document.getElementById('answer_input').value;
@@ -566,7 +566,7 @@ if (problem_type == 'Geometry') {
                 var herons_arr = herons();
                 var answer = herons_arr[3];
 
-                let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2]
+                let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + ". Find the area of the triangle."
 
                 function check_answer() {
                     var input = document.getElementById('answer_input').value;
@@ -759,7 +759,7 @@ if (problem_type == 'Centroid') {
         coord_b = make_coordinate(centroid[2], centroid[5]);
         coord_c = make_coordinate(centroid[3], centroid[6]);
 
-        let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c;
+        let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid.";
 
 
         function check_answer() {
@@ -909,7 +909,7 @@ if (problem_type == 'Angle Bisector') {
         var angleb_arr = angleb_func();
         var answer = angleb_arr[0];
 
-        let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3]
+        let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD."
 
 
         function check_answer() {
@@ -940,7 +940,7 @@ if (problem_type == 'Angle Bisector') {
                     <img class='problem_image' src="${img}">
                 </div>
 
-                <div class='problem_text_area'>
+                <div class='problem_text_area' style='font-size: 1.2rem'>
                     ${question}
                 </div>
 
@@ -1030,7 +1030,7 @@ if (problem_type == 'Two Pole') {
         answer = poles[2].toString() + "/" + poles[3].toString();
         let alt_answer = poles[4].toString();
 
-        let question = "Pole A = " + poles[0] + " and " + "Pole B = " + poles[1];
+        let question = "Pole A = " + poles[0] + " and " + "Pole B = " + poles[1] + ". Find the length of the green line.";
 
         function check_answer() {
             let input = document.getElementById('answer_input').value;
@@ -1214,7 +1214,7 @@ if (problem_type == "Heron's Formula") {
         var herons_arr = herons();
         var answer = herons_arr[3];
 
-        let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2]
+        let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + ". Find the area of the triangle."
 
         function check_answer() {
             var input = document.getElementById('answer_input').value;

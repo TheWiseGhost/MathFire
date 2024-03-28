@@ -45,13 +45,14 @@ body {
     grid-area: 2 / 1 / 6 / 3;
     align-self: center;
     justify-self: center;
+    height: 90%;
 }
 
 .problem_text_area {
     grid-area: 2 / 3 / 3 / 5;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     align-self: center;
     justify-self: center;
     text-align: center;
