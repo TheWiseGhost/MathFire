@@ -290,6 +290,14 @@ h6 span{
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 
+.logo {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	display: block;
+	z-index: 100;
+	transition: all 250ms linear;
+}
 
 .logo:hover {
     cursor: pointer;
