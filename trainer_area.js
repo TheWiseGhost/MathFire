@@ -111,7 +111,7 @@ if (problem_type == 'Geometry') {
                 coord_b = make_coordinate(centroid[2], centroid[5]);
                 coord_c = make_coordinate(centroid[3], centroid[6]);
 
-                let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid.";
+                let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid (Round to 2 decimal places if necessary).";
 
 
                 function check_answer() {
@@ -141,7 +141,7 @@ if (problem_type == 'Geometry') {
                             <img class='problem_image' src="${img}">
                         </div>
 
-                        <div class='problem_text_area'>
+                        <div class='problem_text_area' style='font-size: 1.2rem'>
                             ${question}
                         </div>
 
@@ -261,7 +261,7 @@ if (problem_type == 'Geometry') {
                 var angleb_arr = angleb_func();
                 var answer = angleb_arr[0];
 
-                let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD."
+                let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD. (Round to 2 decimal places if necessary)"
 
 
                 function check_answer() {
@@ -566,7 +566,7 @@ if (problem_type == 'Geometry') {
                 var herons_arr = herons();
                 var answer = herons_arr[3];
 
-                let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + ". Find the area of the triangle."
+                let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + '. Find the area of the triangle (Answer in format "2sqrt(192.1875)" for example).'
 
                 function check_answer() {
                     var input = document.getElementById('answer_input').value;
@@ -670,6 +670,257 @@ if (problem_type == 'Geometry') {
 
 
 
+if (problem_type == 'Algebra') {
+    function main_load() {
+        let possible = ['aX-intercept', 'aVertex'];
+        let rand_num = Math.round(Math.random());
+        problem_type = possible[rand_num]
+        if (problem_type == "aX-intercept") {
+            function load() {
+                function xint() {
+                    let a, b, c;
+                    a = Math.round(Math.random() * 9) + 1
+                    b = Math.round(Math.random() * 9) + 1
+                    c = Math.round(Math.random() * 9) + 1
+
+                    let answer;
+                    let sqrt_term = Math.sqrt(b**2 + 4*a*c);
+                    answer = ((-b)+sqrt_term)/(2*a);
+                    answer = +answer.toFixed(2);
+
+                    let return_arr = [a, b, c, answer];
+                    return return_arr;
+                }
+
+
+                var xint = xint();
+                var answer = xint[3];
+
+                let question = "y = " + xint[0] + "x^2 + " + xint[1] + "x - " + xint[2] + ". Given this equation, find the largest possible X-intercept (Round to 2 decimal places)."
+
+                function check_answer() {
+                    var input = document.getElementById('answer_input').value;
+                    if (input == answer) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+
+
+                let img = 'https://mathcracker.com/images/legacy/parabola.png';
+                let div_main = document.createElement('div');
+                div_main.innerHTML = `
+                    <div class='trainer_area' id='trainer_area'>
+                        <div class='problem_type_title'>
+                            Algebra
+                        </div>
+
+                        <div class='home_button_area'>
+                            <button class='home_button'>
+                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                            </button>
+                        </div>
+
+                        <div class='image_area'>
+                            <img class='problem_image' src="${img}">
+                        </div>
+
+                        <div class='problem_text_area'>
+                            ${question}
+                        </div>
+
+                        <div class='answer_area'>
+                            Answer:
+                            <input class='answer_input' id='answer_input'>
+                        </div>
+
+                        <div class='submit_button_area'>
+                            <a href='#'>
+                                <button class="blob-btn2" id='submit'>
+                                    Submit
+                                    <span class="blob-btn2__inner">
+                                      <span class="blob-btn2__blobs">
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                      </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class='refresh_button_area'>
+                            <a href='#'>
+                                <button class="blob-btn" id='refresh'>
+                                    Refresh
+                                    <span class="blob-btn__inner">
+                                      <span class="blob-btn__blobs">
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                      </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class='result_area' id='result_area'>
+
+                        </div>
+                    </div>
+                `;
+
+                main.appendChild(div_main);
+
+                let result_area = document.getElementById('result_area');
+
+                document.getElementById('submit').onclick = function () {
+                    var correct = check_answer();
+                    if (correct == true) {
+                        result_area.textContent = "Correct!";
+                    } else {
+                        result_area.textContent = "Incorrect";
+                    }
+                }
+
+                document.getElementById('refresh').onclick = function () {
+                    main.innerHTML = '';
+                    main_load();
+                }
+            }
+
+            load();
+        }
+
+
+        if (problem_type == "aVertex") {
+            function load() {
+                function xint() {
+                    let a, b, c;
+                    a = Math.round(Math.random() * 9) + 1
+                    b = Math.round(Math.random() * 9) + 1
+                    c = Math.round(Math.random() * 9) + 1
+
+                    let answer_x, answer_y;
+                    answer_x = -b/(2*a);
+                    answer_y = a*(answer_x**2) + b*answer_x - c;
+                    answer_x = +answer_x.toFixed(2);
+                    answer_y = +answer_y.toFixed(2);
+
+                    let return_arr = [a, b, c, answer_x, answer_y];
+                    return return_arr;
+                }
+
+
+                var xint = xint();
+                var answer= "(" + xint[3] + "," + xint[4] + ")";
+
+                let question = "y = " + xint[0] + "x^2 + " + xint[1] + "x - " + xint[2] + ". Given this equation, find coordinates of the vertex (Round to 2 decimal places)."
+
+                function check_answer() {
+                    var input = document.getElementById('answer_input').value;
+                    if (input == answer) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+
+
+                let img = 'https://mathcracker.com/images/legacy/parabola.png';
+                let div_main = document.createElement('div');
+                div_main.innerHTML = `
+                    <div class='trainer_area' id='trainer_area'>
+                        <div class='problem_type_title'>
+                            Algebra
+                        </div>
+
+                        <div class='home_button_area'>
+                            <button class='home_button'>
+                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                            </button>
+                        </div>
+
+                        <div class='image_area'>
+                            <img class='problem_image' src="${img}">
+                        </div>
+
+                        <div class='problem_text_area'>
+                            ${question}
+                        </div>
+
+                        <div class='answer_area'>
+                            Answer:
+                            <input class='answer_input' id='answer_input'>
+                        </div>
+
+                        <div class='submit_button_area'>
+                            <a href='#'>
+                                <button class="blob-btn2" id='submit'>
+                                    Submit
+                                    <span class="blob-btn2__inner">
+                                      <span class="blob-btn2__blobs">
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                        <span class="blob-btn2__blob"></span>
+                                      </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class='refresh_button_area'>
+                            <a href='#'>
+                                <button class="blob-btn" id='refresh'>
+                                    Refresh
+                                    <span class="blob-btn__inner">
+                                      <span class="blob-btn__blobs">
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                      </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class='result_area' id='result_area'>
+
+                        </div>
+                    </div>
+                `;
+
+                main.appendChild(div_main);
+
+                let result_area = document.getElementById('result_area');
+
+                document.getElementById('submit').onclick = function () {
+                    var correct = check_answer();
+                    if (correct == true) {
+                        result_area.textContent = "Correct!";
+                    } else {
+                        result_area.textContent = "Incorrect";
+                    }
+                }
+
+                document.getElementById('refresh').onclick = function () {
+                    main.innerHTML = '';
+                    main_load();
+                }
+            }
+
+            load();
+        }
+    }
+    main_load();
+}
+
+
 
 if (problem_type == 'Centroid') {
     function load() {
@@ -759,7 +1010,7 @@ if (problem_type == 'Centroid') {
         coord_b = make_coordinate(centroid[2], centroid[5]);
         coord_c = make_coordinate(centroid[3], centroid[6]);
 
-        let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid.";
+        let question = "Coordinate A = " + coord_a + ", Coordinate B = " + coord_b + ", and Coordinate C = " + coord_c + ". Find the centroid (Round to 2 decimal place if necessary).";
 
 
         function check_answer() {
@@ -789,7 +1040,7 @@ if (problem_type == 'Centroid') {
                     <img class='problem_image' src="${img}">
                 </div>
 
-                <div class='problem_text_area'>
+                <div class='problem_text_area' style='font-size: 1.2rem'>
                     ${question}
                 </div>
 
@@ -909,7 +1160,7 @@ if (problem_type == 'Angle Bisector') {
         var angleb_arr = angleb_func();
         var answer = angleb_arr[0];
 
-        let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD."
+        let question = "Side AC = " + angleb_arr[1] + " and Side AB = " + angleb_arr[2] + " and Side BD = " + angleb_arr[3] + ". Find the length of CD (Round to 2 decimal places if necessary)."
 
 
         function check_answer() {
@@ -1008,7 +1259,6 @@ if (problem_type == 'Angle Bisector') {
 
     load();
 }
-
 
 
 if (problem_type == 'Two Pole') {
@@ -1214,7 +1464,7 @@ if (problem_type == "Heron's Formula") {
         var herons_arr = herons();
         var answer = herons_arr[3];
 
-        let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + ". Find the area of the triangle."
+        let question = "Side A = " + herons_arr[0] + ", Side B = " + herons_arr[1] + ", Side C = " + herons_arr[2] + '. Find the area of the triangle (Answer in format "2sqrt(192.1875)" for example).'
 
         function check_answer() {
             var input = document.getElementById('answer_input').value;
@@ -1227,6 +1477,249 @@ if (problem_type == "Heron's Formula") {
 
 
         let img = 'Herons.png';
+        let div_main = document.createElement('div');
+        div_main.innerHTML = `
+            <div class='trainer_area' id='trainer_area'>
+                <div class='problem_type_title'>
+                    ${problem_type}
+                </div>
+
+                <div class='home_button_area'>
+                    <button class='home_button'>
+                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                    </button>
+                </div>
+
+                <div class='image_area'>
+                    <img class='problem_image' src="${img}">
+                </div>
+
+                <div class='problem_text_area'>
+                    ${question}
+                </div>
+
+                <div class='answer_area'>
+                    Answer:
+                    <input class='answer_input' id='answer_input'>
+                </div>
+
+                <div class='submit_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn2" id='submit'>
+                            Submit
+                            <span class="blob-btn2__inner">
+                              <span class="blob-btn2__blobs">
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='refresh_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn" id='refresh'>
+                            Refresh
+                            <span class="blob-btn__inner">
+                              <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='result_area' id='result_area'>
+
+                </div>
+            </div>
+        `;
+
+        main.appendChild(div_main);
+
+        let result_area = document.getElementById('result_area');
+
+        document.getElementById('submit').onclick = function () {
+            var correct = check_answer();
+            if (correct == true) {
+                result_area.textContent = "Correct!";
+            } else {
+                result_area.textContent = "Incorrect";
+            }
+        }
+
+        document.getElementById('refresh').onclick = function () {
+            main.innerHTML = '';
+            load();
+        }
+    }
+
+    load();
+}
+
+
+if (problem_type == "X-intercept") {
+    function load() {
+        function xint() {
+            let a, b, c;
+            a = Math.round(Math.random() * 9) + 1
+            b = Math.round(Math.random() * 9) + 1
+            c = Math.round(Math.random() * 9) + 1
+
+            let answer;
+            let sqrt_term = Math.sqrt(b**2 + 4*a*c);
+            answer = ((-b)+sqrt_term)/(2*a);
+            answer = +answer.toFixed(2);
+
+            let return_arr = [a, b, c, answer];
+            return return_arr;
+        }
+
+
+        var xint = xint();
+        var answer = xint[3];
+
+        let question = "y = " + xint[0] + "x^2 + " + xint[1] + "x - " + xint[2] + ". Given this equation, find the largest possible X-intercept (Round to 2 decimal places)."
+
+        function check_answer() {
+            var input = document.getElementById('answer_input').value;
+            if (input == answer) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        let img = 'https://mathcracker.com/images/legacy/parabola.png';
+        let div_main = document.createElement('div');
+        div_main.innerHTML = `
+            <div class='trainer_area' id='trainer_area'>
+                <div class='problem_type_title'>
+                    ${problem_type}
+                </div>
+
+                <div class='home_button_area'>
+                    <button class='home_button'>
+                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                    </button>
+                </div>
+
+                <div class='image_area'>
+                    <img class='problem_image' src="${img}">
+                </div>
+
+                <div class='problem_text_area'>
+                    ${question}
+                </div>
+
+                <div class='answer_area'>
+                    Answer:
+                    <input class='answer_input' id='answer_input'>
+                </div>
+
+                <div class='submit_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn2" id='submit'>
+                            Submit
+                            <span class="blob-btn2__inner">
+                              <span class="blob-btn2__blobs">
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                                <span class="blob-btn2__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='refresh_button_area'>
+                    <a href='#'>
+                        <button class="blob-btn" id='refresh'>
+                            Refresh
+                            <span class="blob-btn__inner">
+                              <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                              </span>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class='result_area' id='result_area'>
+
+                </div>
+            </div>
+        `;
+
+        main.appendChild(div_main);
+
+        let result_area = document.getElementById('result_area');
+
+        document.getElementById('submit').onclick = function () {
+            var correct = check_answer();
+            if (correct == true) {
+                result_area.textContent = "Correct!";
+            } else {
+                result_area.textContent = "Incorrect";
+            }
+        }
+
+        document.getElementById('refresh').onclick = function () {
+            main.innerHTML = '';
+            load();
+        }
+    }
+
+    load();
+}
+
+
+if (problem_type == "Vertex") {
+    function load() {
+        function xint() {
+            let a, b, c;
+            a = Math.round(Math.random() * 9) + 1
+            b = Math.round(Math.random() * 9) + 1
+            c = Math.round(Math.random() * 9) + 1
+
+            let answer_x, answer_y;
+            answer_x = -b/(2*a);
+            answer_y = a*(answer_x**2) + b*answer_x - c;
+            answer_x = +answer_x.toFixed(2);
+            answer_y = +answer_y.toFixed(2);
+
+            let return_arr = [a, b, c, answer_x, answer_y];
+            return return_arr;
+        }
+
+
+        var xint = xint();
+        var answer= "(" + xint[3] + "," + xint[4] + ")";
+
+        let question = "y = " + xint[0] + "x^2 + " + xint[1] + "x - " + xint[2] + ". Given this equation, find coordinates of the vertex (Round to 2 decimal places)."
+
+        function check_answer() {
+            var input = document.getElementById('answer_input').value;
+            if (input == answer) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        let img = 'https://mathcracker.com/images/legacy/parabola.png';
         let div_main = document.createElement('div');
         div_main.innerHTML = `
             <div class='trainer_area' id='trainer_area'>
