@@ -1,6 +1,6 @@
 const url = new URL(location.href);
 
-const APILINK = 'http://localhost:8000/';
+const APILINK = 'https://mathfirebackend.onrender.com/';
 
 
 // For backend update; could just re-initalize in function but oh well
