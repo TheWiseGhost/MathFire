@@ -592,7 +592,7 @@ if (problem_type == 'Geometry') {
                             </button>
                         </div>
 
-                        <div class='image_area'>
+                        <div class='image_area' style='margin-top: 0'>
                             <img class='problem_image' src="${img}">
                         </div>
 
@@ -1490,7 +1490,7 @@ if (problem_type == "Heron's Formula") {
                     </button>
                 </div>
 
-                <div class='image_area'>
+                <div class='image_area' style='margin-top: 0'>
                     <img class='problem_image' src="${img}">
                 </div>
 
@@ -1847,7 +1847,7 @@ async function update(url) {
                     </div>
 
                     <div class='image_area'>
-                        <img class='problem_image' src="${img}">
+                        <img class='problem_image' src="Challenges.png">
                     </div>
 
                     <div class='problem_text_area'>

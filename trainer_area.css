@@ -45,6 +45,7 @@ body {
     grid-area: 2 / 1 / 6 / 3;
     align-self: center;
     justify-self: center;
+    margin-top: 5rem;
     height: 90%;
 }
 
@@ -58,6 +59,7 @@ body {
     text-align: center;
     margin-left: 2rem;
     margin-right: 3rem;
+    line-height: 2.5rem;
 }
 
 .answer_area {
