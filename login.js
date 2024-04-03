@@ -1,22 +1,10 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://mathfirebackend.onrender.com/';
-
-const indicator = document.getElementById('reg-log');
-
-indicator.onclick = () => { update_curr() };
-
-function update_curr() {
-    if (indicator.checked) {
-        localStorage.setItem('current_login_type', 'login');
-    } else {
-        localStorage.setItem('current_login_type', 'register');
-    }
-}
+const APILINK = 'http://localhost:8000'//'https://mathfirebackend.onrender.com/';
 
 
 function handleFormSubmit(url, actionUrl, formId, callback) {
-    let url = url + actionUrl;
+    url = url + actionUrl;
     document.getElementById(formId).addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -36,15 +24,26 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
     });
 }
 
-// Usage:
-handleFormSubmit(APILINK, "/action/login", function(responseData) {
-    // Handle response from login form submission
-    console.log(responseData);
-});
+let register_button = document.getElementById('register_button');
+let login_button = document.getElementById('login_button');
 
-handleFormSubmit(APILINK, "/action/register", function(responseData) {
-    // Handle response from register form submission
-    console.log(responseData);
-});
+login_button.onclick = () => {
+    handleFormSubmit(APILINK, "/action/login", 'loginForm', function(response) {
+        // Handle response from login form submission
+        console.log(response);
+    });
+};
+
+register_button.onclick = () => {
+    handleFormSubmit(APILINK, "/action/register", 'registerForm', function(response) {
+        if (response.ok) {
+            // Registration was successful, redirect to index.html
+            window.location.href = "/index.html";
+        } else {
+            // Registration failed, display error message
+            alert("Registration failed. Please try again.");
+        }
+    });
+};
 
 // Have to define callback functions and fullt figure out what this code even does
