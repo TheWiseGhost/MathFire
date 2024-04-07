@@ -7,20 +7,29 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
     url = url + actionUrl;
     document.getElementById(formId).addEventListener("submit", function(event) {
         event.preventDefault();
+        let username, password;
 
-        var formData = new FormData(this);
+        if (formId == 'registerForm') {
+            username = document.getElementById('registeremail');
+            password = document.getElementById('registerpass');
+        } else {
+            username = document.getElementById('logemail');
+            password = document.getElementById('logpass');
+        }
 
         // Send POST request to the specified action URL
         fetch(url, {
             method: 'POST',
-            body: formData
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'username': username, "password": password})
         })
         .then(res => res.json())
         .then(data => {
             // Handle response from server
             callback(data);
-            const jsonData = data;
-            console.log('Parsed JSON:', jsonData);
         })
         .catch(error => console.error('Error:', error));
     });
@@ -31,8 +40,13 @@ let login_button = document.getElementById('login_button');
 
 login_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/login", 'loginForm', function(response) {
-        // Handle response from login form submission
-        console.log(response);
+        if (response.ok) {
+            // Registration was successful, redirect to index.html
+            window.location.href = "/index.html";
+        } else {
+            // Registration failed, display error message
+            alert("Login failed. Please try again.");
+        }
     });
 };
 
