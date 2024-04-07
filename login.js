@@ -15,10 +15,12 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json()) // assuming response is JSON
+        .then(res => res.json())
         .then(data => {
             // Handle response from server
             callback(data);
+            const jsonData = data;
+            console.log('Parsed JSON:', jsonData);
         })
         .catch(error => console.error('Error:', error));
     });
@@ -46,4 +48,4 @@ register_button.onclick = () => {
     });
 };
 
-// Have to define callback functions and fullt figure out what this code even does
+
