@@ -24,7 +24,7 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({'username': username, "password": password})
+            body: JSON.stringify({'username': username.value, "password": password.value})
         })
         .then(res => res.json())
         .then(data => {
@@ -40,11 +40,11 @@ let login_button = document.getElementById('login_button');
 
 login_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/login", 'loginForm', function(response) {
-        if (response.ok) {
+        if (response.message == 'ok') {
             // Registration was successful, redirect to index.html
             window.location.href = "/index.html";
         } else {
-            // Registration failed, display error message
+            // Login failed, display error message
             alert("Login failed. Please try again.");
         }
     });
@@ -52,9 +52,8 @@ login_button.onclick = () => {
 
 register_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/register", 'registerForm', function(response) {
-        if (response.ok) {
-            // Registration was successful, redirect to index.html
-            window.location.href = "/index.html";
+        if (response.message == 'ok') {
+            alert("Welcome to MathFire! Please login with your new account");
         } else {
             // Registration failed, display error message
             alert("Registration failed. Please try again.");
