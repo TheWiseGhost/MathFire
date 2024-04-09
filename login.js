@@ -1,6 +1,8 @@
 const url = new URL(location.href);
 
-const APILINK = 'http://localhost:8000'//'https://mathfirebackend.onrender.com/';
+const APILINK = 'https://mathfirebackend.onrender.com'
+//const APILINK = 'http://localhost:8000';
+
 localStorage.setItem('user', 'none')
 
 let username, password;
