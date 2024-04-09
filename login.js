@@ -1,13 +1,14 @@
 const url = new URL(location.href);
 
 const APILINK = 'http://localhost:8000'//'https://mathfirebackend.onrender.com/';
+localStorage.setItem('user', 'none')
 
+let username, password;
 
 function handleFormSubmit(url, actionUrl, formId, callback) {
     url = url + actionUrl;
     document.getElementById(formId).addEventListener("submit", function(event) {
         event.preventDefault();
-        let username, password;
 
         if (formId == 'registerForm') {
             username = document.getElementById('registeremail');
@@ -43,10 +44,14 @@ login_button.onclick = () => {
         if (response.message == 'ok') {
             // Registration was successful, redirect to index.html
             window.location.href = "/index.html";
+            let email = username.value;
+            let cleanedEmail = email.replace("@gmail.com", "")
+            localStorage.setItem('user', cleanedEmail);
         } else {
             // Login failed, display error message
             alert("Login failed. Please try again.");
         }
+
     });
 };
 

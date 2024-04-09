@@ -84,7 +84,7 @@ h6 span{
   line-height: 36px;
   text-align: center;
   font-size: 24px;
-  transition: all 0.5s ease;
+  transition: all 0.75s ease;
 }
 
 .checkbox:checked + label:before {
@@ -111,7 +111,7 @@ h6 span{
   left: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: all 600ms ease-out;
+  transition: all 750ms ease-out;
 }
 
 .card-front, .card-back {
