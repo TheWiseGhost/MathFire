@@ -45,7 +45,7 @@ login_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/login", 'loginForm', function(response) {
         if (response.message == 'ok') {
             // Registration was successful, redirect to index.html
-            window.location.href = "/index.html";
+            window.location.href = "index.html";
             let email = username.value;
             let cleanedEmail = email.replace("@gmail.com", "")
             localStorage.setItem('user', cleanedEmail);
