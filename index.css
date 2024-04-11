@@ -16,9 +16,9 @@ body {
 
 .main {
     display: grid;
-    height: 45vw;
+    height: 50vw;
     grid-template-columns: 3fr 0.6fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3.4fr 1.6fr;
+    grid-template-rows: 1fr 2.2fr 1.6fr;
     background-image: urL('MathHero.png');
     width: 100vw;
     padding-top: 0;

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+
+:root {
+    --orangered: #E63429;
+    --lightorange: #FD9C33;
+}
+
+* {
+	 box-sizing: border-box;
+	 margin: 0;
+	 padding: 0;
+}
+
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.competitions {
+    display: grid;
+    height: 50vw;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1.5fr 2.5fr 1fr 1fr 1fr 1fr;
+    background-image: urL('MathFireCompetitionsBg.png');
+    padding-top: 0;
+    background-size: cover;
+    font-family: "Kumbh Sans", sans-serif;
+    overflow-y: visible;
+}
+
+
