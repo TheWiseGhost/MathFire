@@ -11,15 +11,16 @@
 }
 
 * {
-	 box-sizing: border-box;
-	 margin: 0;
-	 padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
 
-body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+*::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
 }
+
 
 .intro {
     display: grid;
@@ -92,21 +93,28 @@ body {
     padding-top: 2rem;
     padding-left: 8rem;
     padding-right: 8rem;
+    margin-bottom: 4rem;
+    height: 35vw;
+    width: 50vw;
 }
 
 .bg_card {
     background-color: var(--lightorange);
     padding-bottom: 2rem;
     padding-right: 2rem;
-    height: 2rem;
-    width: 3rem;
     grid-template-rows: 1fr 2fr 0.5fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr 1fr;
 }
 
-.bg_card a:hover {
+.bg_card a {
+    text-decoration: none;
+}
+
+.bg_card:hover {
     background-color: var(--orangered);
     cursor: pointer;
+    color: inherit;
+    text-decoration: none;
 }
 
 .comp_title {
@@ -114,10 +122,20 @@ body {
     color: black;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 1.25rem;
+    background-color: white;
+}
+
+.comp_date {
+    grid-area: 1 / 2 / 1 / 2;
+    background-color: green;
+    color: black;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.25rem;
 }
 
 .comp_description {
-    grid-area: 2 / 1 / 2 / 1;
+    grid-area: 2 / 1 / 2 / 2;
+    background-color: blue;
     color: darkslategrey;
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.75rem;
