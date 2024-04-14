@@ -21,11 +21,11 @@ body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.competitions {
+.intro {
     display: grid;
     height: 50vw;
     grid-template-columns: 1fr;
-    grid-template-rows: 2.5fr 3.5fr 2fr 2fr;
+    grid-template-rows: 3.5fr 5fr 3fr 2fr;
     background-image: urL('MathFireCompetitionsBg.png');
     padding-top: 0;
     background-size: cover;
@@ -49,7 +49,6 @@ body {
     padding-left: 10rem;
     padding-right: 10rem;
     padding-top: 0rem;
-    padding-bottom: 1rem;
     text-align: center;
 }
 
@@ -57,6 +56,7 @@ body {
     grid-area: 3 / 1 / 3 / 1;
     justify-self: center;
     align-self: top;
+    text-align: center;
 }
 
 .home_button {
@@ -80,8 +80,54 @@ body {
 .filter_by {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1rem;
+    font-weight: 400;
+    padding-bottom: 1.5rem;
 }
 
+
+
+/* Styling the competitions and their links */
+
+.competitions {
+    padding-top: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+.bg_card {
+    background-color: var(--lightorange);
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    height: 2rem;
+    width: 3rem;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    grid-template-columns: 1fr;
+}
+
+.bg_card a:hover {
+    background-color: var(--orangered);
+    cursor: pointer;
+}
+
+.comp_title {
+    grid-area: 1 / 1 / 1 / 1;
+    color: black;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.25rem;
+}
+
+.comp_description {
+    grid-area: 2 / 1 / 2 / 1;
+    color: darkslategrey;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.75rem;
+}
+
+
+
+
+
+/* The slider */
 
 a {
 	cursor: pointer;
