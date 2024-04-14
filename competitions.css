@@ -83,27 +83,40 @@
     font-size: 1rem;
     font-weight: 400;
     padding-bottom: 1.5rem;
+    text-align: center;
+    padding-right: 1.8rem;
 }
 
 
 
 /* Styling the competitions and their links */
 
+.competitions_container {
+    height: 50vw;
+    overflow-y: visible;
+    background-color: white;
+}
+
 .competitions {
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-left: 8rem;
     padding-right: 8rem;
     margin-bottom: 4rem;
-    height: 35vw;
+    height: 20vw;
     width: 50vw;
 }
 
-.bg_card {
-    background-color: var(--lightorange);
-    padding-bottom: 2rem;
+.container {
     padding-right: 2rem;
-    grid-template-rows: 1fr 2fr 0.5fr;
-    grid-template-columns: 3fr 1fr;
+    padding-bottom: 2rem;
+}
+
+.bg_card {
+    display: grid;
+    background-color: var(--lightorange);
+    grid-template-rows: 1fr 1.75fr 1fr 0.25fr;
+    grid-template-columns: 2.5fr 1fr;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.5)
 }
 
 .bg_card a {
@@ -115,35 +128,66 @@
     cursor: pointer;
     color: inherit;
     text-decoration: none;
+    border-color: white;
 }
 
 .comp_title {
     grid-area: 1 / 1 / 1 / 1;
     color: black;
     font-family: 'Kumbh Sans', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    font-weight: 600;
     background-color: white;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .comp_date {
     grid-area: 1 / 2 / 1 / 2;
-    background-color: green;
+    background-color: white;
     color: black;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 1.25rem;
+    padding-right: 1rem;
+    padding-top: 1.4rem;
+    line-height: 0;
+    text-align: center;
+    align-content: center;
 }
 
 .comp_description {
-    grid-area: 2 / 1 / 2 / 2;
-    background-color: blue;
+    grid-area: 2 / 1 / 2 / 3;
+    background-color: white;
     color: darkslategrey;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 0.75rem;
+    padding: 1rem;
+    padding-bottom: 0;
 }
 
+.comp_time {
+    grid-area: 3 / 2 / 3 / 2;
+    background-color: white;
+    color: black;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+    padding-right: 1rem;
+}
 
+.comp_location {
+    grid-area: 3 / 1 / 3 / 1;
+    background-color: white;
+    color: black;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
 
-
+.small_icons {
+    font-size: 0rem;
+    color: var(--orangered);
+    padding-right: 0.5rem;
+}
 
 /* The slider */
 
@@ -164,11 +208,6 @@ a:hover {
   color: #ffeba7;
 }
 
-p {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.7;
-}
 
 h4 {
   font-weight: 600;
