@@ -1,30 +1,33 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://mathfirebackend.onrender.com/';
+//const APILINK = 'https://mathfirebackend.onrender.com/';
+const APILINK = 'http://localhost:8000/'
 
 const main = document.getElementById('competitions_container');
 
 let checkbox = document.getElementById('reg-log');
 localStorage.setItem('comp_status', 'active');
 
+
 checkbox.onclick = () => {
     let curr = localStorage.getItem('comp_status');
     if (curr == 'active') {
         localStorage.setItem('comp_status', 'completed');
-        competitions(APILINK);
     } else {
         localStorage.setItem('comp_status', 'active');
-        competitions(APILINK);
     }
+    main.innerHTML = '';
+    competitions(APILINK);
+    main.scrollIntoView({ behavior: 'smooth'});
 }
 
+competitions(APILINK);
 
-function competitions(url){
-    url = url + '/competitions_search';
-    fetch(url).then(res => res.json())
-    .then(function(data){
-    console.log(data.results);
-    data.results.forEach(element => {
+async function competitions(url){
+    url = url + 'competitions_search';
+    const res = await fetch(url);
+    const data = await res.json();
+    data.forEach((element) => {
         if (element.status == localStorage.getItem('comp_status')) {
             div_main = document.createElement('div');
             div_main.innerHTML = `
@@ -42,7 +45,7 @@ function competitions(url){
 
                             <div class='comp_description'>
                                 <span class='small_icons'><p class='material-symbols-outlined'>Info</p></span>
-                                ${element.description}
+                                ${element.info}
                             </div>
 
                             <div class='comp_location'>
@@ -59,9 +62,8 @@ function competitions(url){
                     </div>
                 </div> `
 
-            main.appendChild(div_row);
+            main.appendChild(div_main);
         }
     });
-  });
   }
 
