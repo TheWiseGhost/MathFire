@@ -69,6 +69,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 1.5rem;
+    transition-duration: 0.5s;
 }
 
 .nav_comp {
@@ -76,6 +77,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 1.5rem;
+    transition-duration: 0.5s;
 }
 
 .nav_leaderboard {
@@ -83,6 +85,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 1.5rem;
+    transition-duration: 0.5s;
 }
 
 .small_icons {
@@ -119,3 +122,33 @@
     padding-left: 2rem;
 }
 
+
+.main_element {
+    padding-top: 0;
+    min-height: 50vw;
+    font-family: "Kumbh Sans", sans-serif;
+    overflow-y: visible;
+    padding-top: 1rem;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 0.5rem 6rem;
+    margin-bottom: 4rem;
+}
+
+
+.in_box_title {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--orangered);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.in_box_text {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.15rem;
+    color: black;
+    padding: 1rem 3rem;
+}
