@@ -1,7 +1,7 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://mathfirebackend.onrender.com/';
-//const APILINK = 'http://localhost:8000/'
+//const APILINK = 'https://mathfirebackend.onrender.com/';
+const APILINK = 'http://localhost:8000/'
 
 const main = document.getElementById('competitions_container');
 
@@ -31,7 +31,7 @@ async function competitions(url){
         if (element.status == localStorage.getItem('comp_status')) {
             div_main = document.createElement('div');
             div_main.innerHTML = `
-                <div class='competitions'>
+                <div class='competitions' id='${element._competitionId}'>
                     <div class='container'>
                         <div class='bg_card'>
                             <div class='comp_title'>
@@ -63,6 +63,16 @@ async function competitions(url){
                 </div> `
 
             main.appendChild(div_main);
+            let container = document.getElementById(`${element._competitionId}`)
+            container.onclick = () => {
+                let user = localStorage.getItem('user');
+                if (user != 'none' && user) {
+                    localStorage.setItem('competitionId', `${element._competitionId}`);
+                    window.location.href = 'in_competition.html';
+                } else {
+                    window.alert('Please login to participate in a competition!')
+                }
+            }
         }
     });
   }

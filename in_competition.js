@@ -4,7 +4,8 @@ const nav_comp = document.getElementById('nav_comp');
 const nav_leaderboard = document.getElementById('nav_leaderboard');
 const main = document.getElementById('main_element');
 
-const APILINK = 'https://mathfirebackend.onrender.com/'
+//const APILINK = 'https://mathfirebackend.onrender.com/'
+const APILINK = 'http://localhost:8000/'
 
 function update_nav_buttons() {
     if (localStorage.getItem('in_comp_status') == 'information') {
@@ -22,27 +23,31 @@ function update_nav_buttons() {
     }
 }
 
-update_nav_buttons()
+update_nav_buttons();
+update_info(APILINK);
 
 nav_info.onclick = () => {
     localStorage.setItem('in_comp_status', 'information');
     update_nav_buttons();
+    update_info(APILINK);
 }
 
 nav_comp.onclick = () => {
     localStorage.setItem('in_comp_status', 'competition')
     update_nav_buttons();
+    update_comp(APILINK);
 }
 
 nav_leaderboard.onclick = () => {
     localStorage.setItem('in_comp_status', 'leaderboard')
     update_nav_buttons();
+    update_leaderboard(APILINK);
 }
 
 
 async function update_info(url) {
     main.innerHTML = '';
-    url = url + 'competitions' + localStorage.getItem('competitionId');
+    url = url + 'competition/' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
     .then(function (element) {
@@ -62,35 +67,38 @@ async function update_info(url) {
 
 async function update_comp(url){
     main.innerHTML = '';
-    url = url + 'competitions' + localStorage.getItem('competitionId');
+    url = url + 'competition/' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
     .then(function(element) {
-        element.problems.forEach((index) => {
+        div_header = document.createElement('div');
+        div_header.innerHTML = `
+            <div class='in_box_title'>
+                Competition
+            </div>`
+        main.appendChild(div_header)
+        for (var i = 0; i < element.problems.length; i++) {
             div_main = document.createElement('div');
             div_main.innerHTML = `
-                <div class='in_box_title'>
-                    Competition
-                </div>
                 <div class='problem_container'>
                     <div class='problem_grid'>
                         <div class='problem_question'>
-                            ${element.problems[index]}
+                            ${element.problems[i]}
                         </div>
 
                         <div class='problem_answer_area'>
                             <span style='color: #EE6C4D'>Answer: </span>
-                            <input class='answer_input' id='${index}'>
+                            <input class='answer_input' id='${i}'>
                         </div>
                     </div>
                 </div>
             `
             main.appendChild(div_main);
-        });
+        };
         div_bottom = document.createElement('div');
         div_bottom.innerHTML = `
             <div style='padding-left: 27rem; padding-top: 2rem'>
-                <button class="blob-btn" id='submit_button>
+                <button class="blob-btn" id='submit_button' >
                     Submit Competition
                     <span class="blob-btn__inner">
                         <span class="blob-btn__blobs">
@@ -114,13 +122,14 @@ async function update_comp(url){
             for (var i=0; i < element.max_score; i++) {
                 answer_arr.push(document.getElementById(String(i)).value);
             }
+            console.log(answer_arr);
             for (var i=0; i < element.max_score; i++) {
-                if (answer_arr[i] == element.answer[i]) {
+                if (answer_arr[i] == element.answers[i]) {
                     correct += 1;
                 }
             }
             localStorage.setItem('correct', correct);
-            update_score();
+            update_score(APILINK);
         }
     });
 }
@@ -128,39 +137,56 @@ async function update_comp(url){
 
 async function update_leaderboard(url){
     main.innerHTML = ''
-    url = url + 'competitions/' + localStorage.getItem('competitionId');
+    url = url + 'competition/' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
     .then(function(element) {
-        element.leaderboard_names.forEach((index) => {
+        div_header = document.createElement('div');
+        div_header.innerHTML = `
+            <div class='in_box_title'>
+                Leaderboard
+            </div>
+            <div class='leaderboard_container'>
+                <div class='leaderboard_grid'>
+                    <div class='leaderboard_grid_number' style='text-decoration: underline'>
+                        Rank
+                    </div>
+                    <div class='leaderboard_grid_name' style='text-decoration: underline'>
+                        Email
+                    </div>
+                    <div class='leaderboard_grid_score' style="text-decoration: underline">
+                        Score
+                    </div>
+                </div>
+            </div>
+            `
+        main.appendChild(div_header);
+        for (var i = 0; i < element.leaderboard_names.length; i++) {
             div_main = document.createElement('div');
             div_main.innerHTML = `
-                <div class='in_box_title'>
-                    Leaderboard
-                </div>
                 <div class='leaderboard_container'>
                     <div class='leaderboard_grid'>
-                        <div class='leaderboard_grid_number' style='text-decoration: underline'>
-                            ${index+1}
+                        <div class='leaderboard_grid_number'>
+                            ${i+1}
                         </div>
-                        <div class='leaderboard_grid_name' style='text-decoration: underline'>
-                            ${element.leaderboard_names[index]}
+                        <div class='leaderboard_grid_name'>
+                            ${element.leaderboard_names[i]}
                         </div>
-                        <div class='leaderboard_grid_score' style="text-decoration: underline">
-                            ${element.leaderboard_scores[index]}
+                        <div class='leaderboard_grid_score'>
+                            ${element.leaderboard_scores[i]}
                         </div>
                     </div>
                 </div>
             `
             main.appendChild(div_main);
-        });
+        };
     });
 }
 
 
 async function update_score(url) {
     main.innerHTML = ''
-    url = url + 'competitions' + '/upload/' + localStorage.getItem('competitionId');
+    url = url + 'competition/' + 'upload/' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
     .then(() => {
@@ -185,6 +211,9 @@ async function update_score(url) {
     .then(response => {
         if (response.message == 'ok') {
             alert("Competition submitted successfully!");
+            localStorage.setItem('in_comp_status', 'leaderboard');
+            update_nav_buttons();
+            update_leaderboard(APILINK);
         } else {
             // Registration failed, display error message
             alert("Competition submission failed. Please try again.");
