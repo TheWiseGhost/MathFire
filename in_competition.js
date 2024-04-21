@@ -38,7 +38,8 @@ nav_leaderboard.onclick = () => {
 }
 
 
-async function update_info(url){
+async function update_info(url) {
+    main.innerHTML = '';
     url = url + 'competitions' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
@@ -52,13 +53,13 @@ async function update_info(url){
                 ${element.description}
             </div>
         `
-
         main.appendChild(div_main);
     });
 }
 
 
 async function update_comp(url){
+    main.innerHTML = '';
     url = url + 'competitions' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
@@ -66,6 +67,9 @@ async function update_comp(url){
         element.problems.forEach((index) => {
             div_main = document.createElement('div');
             div_main.innerHTML = `
+                <div class='in_box_title'>
+                    Competition
+                </div>
                 <div class='problem_container'>
                     <div class='problem_grid'>
                         <div class='problem_question'>
@@ -74,18 +78,54 @@ async function update_comp(url){
 
                         <div class='problem_answer_area'>
                             <span style='color: #EE6C4D'>Answer: </span>
-                            <input class='answer_input'>
+                            <input class='answer_input' id='${index}'>
                         </div>
                     </div>
                 </div>
             `
             main.appendChild(div_main);
         });
+        div_bottom = document.createElement('div');
+        div_bottom.innerHTML = `
+            <div style='padding-left: 27rem; padding-top: 2rem'>
+                <button class="blob-btn" id='submit_button>
+                    Submit Competition
+                    <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+            `
+        main.appendChild(div_bottom);
+
+        answers = element.answers;
+
+        submit_button = document.getElementById('submit_button');
+        let answer_arr = [];
+        let correct = 0;
+        submit_button.onclick = () => {
+            for (var i=0, i < element.max_score, i++) {
+                answer_arr.append(document.getElementById(String(i)).value);
+            }
+            for (var i=0, i < element.max_score, i++) {
+                if (answer_arr[i] == element.answer[i]) {
+                    correct += 1;
+                }
+            }
+            localStorage.setItem('correct', correct);
+            update_score();
+        }
     });
 }
 
 
 async function update_leaderboard(url){
+    main.innerHTML = ''
     url = url + 'competitions' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
@@ -93,6 +133,9 @@ async function update_leaderboard(url){
         element.leaderboard_names.forEach((index) => {
             div_main = document.createElement('div');
             div_main.innerHTML = `
+                <div class='in_box_title'>
+                    Leaderboard
+                </div>
                 <div class='leaderboard_container'>
                     <div class='leaderboard_grid'>
                         <div class='leaderboard_grid_number' style='text-decoration: underline'>
@@ -110,5 +153,10 @@ async function update_leaderboard(url){
             main.appendChild(div_main);
         });
     });
+}
+
+
+async function update_score(url) {
+
 }
 
