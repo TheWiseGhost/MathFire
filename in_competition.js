@@ -4,6 +4,8 @@ const nav_comp = document.getElementById('nav_comp');
 const nav_leaderboard = document.getElementById('nav_leaderboard');
 const main = document.getElementById('main_element');
 
+const APILINK = 'https://mathfirebackend.onrender.com/'
+
 function update_nav_buttons() {
     if (localStorage.getItem('in_comp_status') == 'information') {
         nav_info.style.backgroundColor = '#FFC094';
@@ -109,10 +111,10 @@ async function update_comp(url){
         let answer_arr = [];
         let correct = 0;
         submit_button.onclick = () => {
-            for (var i=0, i < element.max_score, i++) {
-                answer_arr.append(document.getElementById(String(i)).value);
+            for (var i=0; i < element.max_score; i++) {
+                answer_arr.push(document.getElementById(String(i)).value);
             }
-            for (var i=0, i < element.max_score, i++) {
+            for (var i=0; i < element.max_score; i++) {
                 if (answer_arr[i] == element.answer[i]) {
                     correct += 1;
                 }
@@ -126,7 +128,7 @@ async function update_comp(url){
 
 async function update_leaderboard(url){
     main.innerHTML = ''
-    url = url + 'competitions' + localStorage.getItem('competitionId');
+    url = url + 'competitions/' + localStorage.getItem('competitionId');
     fetch(url)
     .then(res => res.json())
     .then(function(element) {
@@ -157,6 +159,37 @@ async function update_leaderboard(url){
 
 
 async function update_score(url) {
+    main.innerHTML = ''
+    url = url + 'competitions' + '/upload/' + localStorage.getItem('competitionId');
+    fetch(url)
+    .then(res => res.json())
+    .then(() => {
+        div_main = document.createElement('div');
+        div_main.innerHTML = `
+            <div class='in_box_title'>
+                Uploading Score...
+            </div>
+        `
+        main.appendChild(div_main);
+    });
 
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({'user': localStorage.getItem('user') , "score": localStorage.getItem('correct'), "id": localStorage.getItem('competitionId')})
+    })
+    .then(res => res.json())
+    .then(response => {
+        if (response.message == 'ok') {
+            alert("Competition submitted successfully!");
+        } else {
+            // Registration failed, display error message
+            alert("Competition submission failed. Please try again.");
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }
 
