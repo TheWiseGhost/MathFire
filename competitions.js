@@ -1,7 +1,7 @@
 const url = new URL(location.href);
 
-//const APILINK = 'https://mathfirebackend.onrender.com/';
-const APILINK = 'http://localhost:8000/'
+const APILINK = 'https://mathfirebackend.onrender.com/';
+//const APILINK = 'http://localhost:8000/'
 
 const main = document.getElementById('competitions_container');
 

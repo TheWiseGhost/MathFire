@@ -5,8 +5,8 @@ const nav_leaderboard = document.getElementById('nav_leaderboard');
 const main = document.getElementById('main_element');
 const title = document.getElementById('title');
 
-//const APILINK = 'https://mathfirebackend.onrender.com/'
-const APILINK = 'http://localhost:8000/'
+const APILINK = 'https://mathfirebackend.onrender.com/'
+//const APILINK = 'http://localhost:8000/'
 
 function update_nav_buttons() {
     if (localStorage.getItem('in_comp_status') == 'information') {
