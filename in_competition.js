@@ -3,6 +3,7 @@ const nav_info = document.getElementById('nav_info');
 const nav_comp = document.getElementById('nav_comp');
 const nav_leaderboard = document.getElementById('nav_leaderboard');
 const main = document.getElementById('main_element');
+const title = document.getElementById('title');
 
 //const APILINK = 'https://mathfirebackend.onrender.com/'
 const APILINK = 'http://localhost:8000/'
@@ -61,6 +62,7 @@ async function update_info(url) {
             </div>
         `
         main.appendChild(div_main);
+        title.innerHTML = element.title;
     });
 }
 
@@ -113,18 +115,20 @@ async function update_comp(url){
             `
         main.appendChild(div_bottom);
 
-        answers = element.answers;
+        let answers = element.answers;
 
         submit_button = document.getElementById('submit_button');
         let answer_arr = [];
         let correct = 0;
+        let my_doc;
         submit_button.onclick = () => {
             for (var i=0; i < element.max_score; i++) {
-                answer_arr.push(document.getElementById(String(i)).value);
+                my_doc = document.getElementById(String(i))
+                answer_arr.push(my_doc.value);
             }
             console.log(answer_arr);
             for (var i=0; i < element.max_score; i++) {
-                if (answer_arr[i] == element.answers[i]) {
+                if (answer_arr[i] == answers[i]) {
                     correct += 1;
                 }
             }
