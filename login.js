@@ -1,7 +1,7 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://mathfirebackend.onrender.com'
-//const APILINK = 'http://localhost:8000';
+//const APILINK = 'https://mathfirebackend.onrender.com'
+const APILINK = 'http://localhost:8000';
 
 localStorage.setItem('user', 'none')
 
@@ -61,6 +61,8 @@ register_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/register", 'registerForm', function(response) {
         if (response.message == 'ok') {
             alert("Welcome to MathFire! Please login with your new account");
+        } else if (response.message == 'emailInUse') {
+            alert('That email is already registered. Please login or make a new account');
         } else {
             // Registration failed, display error message
             alert("Registration failed. Please try again.");
