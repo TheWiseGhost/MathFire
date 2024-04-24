@@ -189,40 +189,44 @@ async function update_leaderboard(url){
 
 
 async function update_score(url) {
-    main.innerHTML = ''
-    url = url + 'competition/' + 'upload/' + localStorage.getItem('competitionId');
-    fetch(url)
-    .then(res => res.json())
-    .then(() => {
-        div_main = document.createElement('div');
-        div_main.innerHTML = `
-            <div class='in_box_title'>
-                Uploading Score...
-            </div>
-        `
-        main.appendChild(div_main);
-    });
+    if (localStorage.getItem('comp_status') == 'active') {
+        main.innerHTML = ''
+        url = url + 'competition/' + 'upload/' + localStorage.getItem('competitionId');
+        fetch(url)
+        .then(res => res.json())
+        .then(() => {
+            div_main = document.createElement('div');
+            div_main.innerHTML = `
+                <div class='in_box_title'>
+                    Uploading Score...
+                </div>
+            `
+            main.appendChild(div_main);
+        });
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({'user': localStorage.getItem('user') , "score": localStorage.getItem('correct'), "id": localStorage.getItem('competitionId')})
-    })
-    .then(res => res.json())
-    .then(response => {
-        if (response.message == 'ok') {
-            alert("Competition submitted successfully!");
-            localStorage.setItem('in_comp_status', 'leaderboard');
-            update_nav_buttons();
-            update_leaderboard(APILINK);
-        } else {
-            // Registration failed, display error message
-            alert("Competition submission failed. Please try again.");
-        }
-    })
-    .catch(error => console.error('Error:', error));
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'user': localStorage.getItem('user') , "score": localStorage.getItem('correct'), "id": localStorage.getItem('competitionId')})
+        })
+        .then(res => res.json())
+        .then(response => {
+            if (response.message == 'ok') {
+                alert("Competition submitted successfully!");
+                localStorage.setItem('in_comp_status', 'leaderboard');
+                update_nav_buttons();
+                update_leaderboard(APILINK);
+            } else {
+                // Registration failed, display error message
+                alert("Competition submission failed. Please try again.");
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    } else {
+        alert("This competition has already been completed. Check the competition portal for active competitions or check the leaderboard to view this competition's results");
+    }
 }
 
