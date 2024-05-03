@@ -17,8 +17,11 @@
 }
 
 body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+*::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
 }
 
 .trainer_portal {
@@ -31,6 +34,7 @@ body {
     background-size: cover;
     font-family: "Kumbh Sans", sans-serif;
     overflow-y: visible;
+    margin-bottom: 2rem;
 }
 
 
@@ -301,12 +305,12 @@ path.two {
 
 /* Challenge Button */
 .wrapper2 {
-    position: fixed;
+    position: absolute;
     margin-left: 2rem;
 }
 
 .link_wrapper{
-  position: relative;
+  position: absolute;
 }
 
 .wrapper2 a{
@@ -360,5 +364,15 @@ path.two {
   right: -25%;
 }
 
+
+.advanced_problems {
+    height: 5vw;
+    background-image: urL('AdvancedProblems.png');
+    background-size: cover;
+    font-family: "Kumbh Sans", sans-serif;
+    overflow-y: visible;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+}
 
 
