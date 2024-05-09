@@ -381,7 +381,7 @@ path.two {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 2rem 9rem;
-    margin-left: 10rem;
+    margin-left: 9.5rem;
     margin-bottom: 3rem;
     align-self: center;
 }
