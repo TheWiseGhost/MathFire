@@ -1,6 +1,7 @@
 const url = new URL(location.href);
 
-const APILINK = 'https://mathfirebackend.onrender.com/';
+//const APILINK = 'https://mathfirebackend.onrender.com/';
+const APILINK = 'http://localhost:8000/'
 
 
 // For backend update; could just re-initalize in function but oh well
@@ -10,11 +11,11 @@ let result_area;
 
 const main = document.getElementById('trainer_area');
 let answer;
-let problem_type = localStorage.getItem('current_problem_type')
+let problem_type = localStorage.getItem('current_problem_type');
 
 
 if (problem_type == 'Challenge Problems') {
-    update(APILINK)
+    update(APILINK, 'Challenges');
 }
 
 
@@ -1809,9 +1810,9 @@ if (problem_type == "Vertex") {
 
 
 // Code for backend needed in challenge problems
-async function set_problem(url) {
+async function set_problem(url, handle) {
     let p_arr = [];
-    url = url + "action/getting_problems";
+    url = url + "action/getting_problems/" + handle;
     const res = await fetch(url);
     const data = await res.json();
     data.forEach((problem) => {
@@ -1822,8 +1823,8 @@ async function set_problem(url) {
     return problemId;
 }
 
-async function update(url) {
-    let id = await set_problem(url);
+async function update(url, handle) {
+    let id = await set_problem(url, handle);
     url = url + "challenges/" + id;
     console.log(url);
     console.log("id = " + id)
@@ -1837,7 +1838,7 @@ async function update(url) {
             div_main.innerHTML = `
                 <div class='trainer_area' id='trainer_area'>
                     <div class='problem_type_title'>
-                        ${problem_type}
+                        ${problem.problemType}
                     </div>
 
                     <div class='home_button_area'>
