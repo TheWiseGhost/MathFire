@@ -1,7 +1,7 @@
 const url = new URL(location.href);
 
-//const APILINK = 'https://mathfirebackend.onrender.com/';
-const APILINK = 'http://localhost:8000/'
+const APILINK = 'https://mathfirebackend.onrender.com/';
+//const APILINK = 'http://localhost:8000/'
 
 
 // For backend update; could just re-initalize in function but oh well
@@ -14,8 +14,53 @@ let answer;
 let problem_type = localStorage.getItem('current_problem_type');
 
 
+// Should've done a switch but its fine
 if (problem_type == 'Challenge Problems') {
     update(APILINK, 'Challenges');
+}
+
+if (problem_type == 'Mass Points') {
+    update(APILINK, 'MassPoints');
+}
+
+if (problem_type == 'Bases') {
+    update(APILINK, 'Bases');
+}
+
+if (problem_type == 'Probability') {
+    update(APILINK, 'Probability');
+}
+
+if (problem_type == 'Triangles') {
+    update(APILINK, 'Triangles');
+}
+
+if (problem_type == 'Circles') {
+    update(APILINK, 'Circles');
+}
+
+if (problem_type == 'Graph Theory') {
+    update(APILINK, 'Graph Theory');
+}
+
+if (problem_type == 'System Equations') {
+    update(APILINK, 'System Equations');
+}
+
+if (problem_type == 'Tangents') {
+    update(APILINK, 'Tangents');
+}
+
+if (problem_type == 'Percents') {
+    update(APILINK, 'Percents');
+}
+
+if (problem_type == 'Polynomials') {
+    update(APILINK, 'Polynomials');
+}
+
+if (problem_type == 'Angles') {
+    update(APILINK, 'Angles');
 }
 
 
@@ -1905,7 +1950,7 @@ async function update(url, handle) {
 
             function refresh_function() {
                 main.innerHTML = ''
-                update(APILINK);
+                update(APILINK, 'Challenges');
             }
 
             submit_button = document.getElementById('submit');

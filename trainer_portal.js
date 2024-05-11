@@ -29,17 +29,17 @@ if (herons) herons.onclick = () => { update_curr("Heron's Formula") };
 if (x_intercept) x_intercept.onclick = () => { update_curr('X-intercept') };
 if (vertex) vertex.onclick = () => { update_curr('Vertex') };
 if (challenge) challenge.onclick = () => { update_curr('Challenge Problems') };
-if (mass_points) challenge.onclick = () => { update_curr('Mass Points') };
-if (bases) challenge.onclick = () => { update_curr('Bases') };
-if (probability) challenge.onclick = () => { update_curr('Probability') };
-if (triangles) challenge.onclick = () => { update_curr('Triangles') };
-if (circles) challenge.onclick = () => { update_curr('Circles') };
-if (graph_theory) challenge.onclick = () => { update_curr('Graph Theory') };
-if (system_equations) challenge.onclick = () => { update_curr('System Equations') };
-if (tangents) challenge.onclick = () => { update_curr('Tangents') };
-if (percents) challenge.onclick = () => { update_curr('Percents') };
-if (polynomials) challenge.onclick = () => { update_curr('Polynomials') };
-if (angles) challenge.onclick = () => { update_curr('Angles') };
+if (mass_points) mass_points.onclick = () => { update_curr('Mass Points') };
+if (bases) bases.onclick = () => { update_curr('Bases') };
+if (probability) probability.onclick = () => { update_curr('Probability') };
+if (triangles) triangles.onclick = () => { update_curr('Triangles') };
+if (circles) circles.onclick = () => { update_curr('Circles') };
+if (graph_theory) graph_theory.onclick = () => { update_curr('Graph Theory') };
+if (system_equations) system_equations.onclick = () => { update_curr('System Equations') };
+if (tangents) tangents.onclick = () => { update_curr('Tangents') };
+if (percents) percents.onclick = () => { update_curr('Percents') };
+if (polynomials) polynomials.onclick = () => { update_curr('Polynomials') };
+if (angles) angles.onclick = () => { update_curr('Angles') };
 
 function update_curr(clicked) {
     localStorage.setItem('current_problem_type', clicked)
