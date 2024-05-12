@@ -16,9 +16,8 @@ checkbox.onclick = () => {
     } else {
         localStorage.setItem('comp_status', 'active');
     }
-    main.innerHTML = '';
+    main.scrollIntoView({ behavior: 'smooth', block: 'start' })
     competitions(APILINK);
-    main.scrollIntoView({ behavior: 'smooth'});
 }
 
 competitions(APILINK);
@@ -27,6 +26,7 @@ async function competitions(url){
     url = url + 'competitions_search';
     const res = await fetch(url);
     const data = await res.json();
+    main.innerHTML = '';
     data.forEach((element) => {
         if (element.status == localStorage.getItem('comp_status')) {
             div_main = document.createElement('div');
@@ -61,7 +61,6 @@ async function competitions(url){
                         </div>
                     </div>
                 </div> `
-
             main.appendChild(div_main);
             let container = document.getElementById(`${element._competitionId}`)
             container.onclick = () => {
