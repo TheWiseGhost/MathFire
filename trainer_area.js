@@ -196,37 +196,11 @@ if (problem_type == 'Geometry') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -245,6 +219,10 @@ if (problem_type == 'Geometry') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -347,37 +325,11 @@ if (problem_type == 'Geometry') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -396,6 +348,10 @@ if (problem_type == 'Geometry') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -468,37 +424,11 @@ if (problem_type == 'Geometry') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -517,6 +447,10 @@ if (problem_type == 'Geometry') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -651,37 +585,11 @@ if (problem_type == 'Geometry') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -700,6 +608,10 @@ if (problem_type == 'Geometry') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -781,37 +693,11 @@ if (problem_type == 'Algebra') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -830,6 +716,10 @@ if (problem_type == 'Algebra') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -903,37 +793,11 @@ if (problem_type == 'Algebra') {
                             <input class='answer_input' id='answer_input'>
                         </div>
 
-                        <div class='submit_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn2" id='submit'>
-                                    Submit
-                                    <span class="blob-btn2__inner">
-                                      <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                        <div class='refresh_button_area'>
-                            <a href='#'>
-                                <button class="blob-btn" id='refresh'>
-                                    Refresh
-                                    <span class="blob-btn__inner">
-                                      <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                      </span>
-                                    </span>
-                                </button>
-                            </a>
-                        </div>
+                        <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                        <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                         <div class='result_area' id='result_area'>
 
@@ -952,6 +816,10 @@ if (problem_type == 'Algebra') {
                     } else {
                         result_area.textContent = "Incorrect";
                     }
+                }
+
+                document.getElementById('see_answer').onclick = function () {
+                    result_area.textContent = answer;
                 }
 
                 document.getElementById('refresh').onclick = function () {
@@ -1095,37 +963,11 @@ if (problem_type == 'Centroid') {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1144,6 +986,10 @@ if (problem_type == 'Centroid') {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1246,37 +1092,11 @@ if (problem_type == 'Angle Bisector') {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1295,6 +1115,10 @@ if (problem_type == 'Angle Bisector') {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1366,37 +1190,11 @@ if (problem_type == 'Two Pole') {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1415,6 +1213,10 @@ if (problem_type == 'Two Pole') {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1549,37 +1351,11 @@ if (problem_type == "Heron's Formula") {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1598,6 +1374,10 @@ if (problem_type == "Heron's Formula") {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1670,37 +1450,11 @@ if (problem_type == "X-intercept") {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1719,6 +1473,10 @@ if (problem_type == "X-intercept") {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1792,37 +1550,11 @@ if (problem_type == "Vertex") {
                     <input class='answer_input' id='answer_input'>
                 </div>
 
-                <div class='submit_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn2" id='submit'>
-                            Submit
-                            <span class="blob-btn2__inner">
-                              <span class="blob-btn2__blobs">
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                                <span class="blob-btn2__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                <div class='refresh_button_area'>
-                    <a href='#'>
-                        <button class="blob-btn" id='refresh'>
-                            Refresh
-                            <span class="blob-btn__inner">
-                              <span class="blob-btn__blobs">
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                                <span class="blob-btn__blob"></span>
-                              </span>
-                            </span>
-                        </button>
-                    </a>
-                </div>
+                <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                 <div class='result_area' id='result_area'>
 
@@ -1841,6 +1573,10 @@ if (problem_type == "Vertex") {
             } else {
                 result_area.textContent = "Incorrect";
             }
+        }
+
+        document.getElementById('see_answer').onclick = function () {
+            result_area.textContent = answer;
         }
 
         document.getElementById('refresh').onclick = function () {
@@ -1905,37 +1641,11 @@ async function update(url, handle) {
                         <input class='answer_input' id='answer_input'>
                     </div>
 
-                    <div class='submit_button_area'>
-                        <a href='#'>
-                            <button class="blob-btn2" id='submit'>
-                                Submit
-                                <span class="blob-btn2__inner">
-                                    <span class="blob-btn2__blobs">
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                        <span class="blob-btn2__blob"></span>
-                                    </span>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
+                    <div class='submit_button_area' id='submit'><a class="click-btn btn-style2" href="#">Submit</a></div>
 
-                    <div class='refresh_button_area'>
-                        <a href='#'>
-                            <button class="blob-btn" id='refresh'>
-                                Refresh
-                                <span class="blob-btn__inner">
-                                    <span class="blob-btn__blobs">
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                        <span class="blob-btn__blob"></span>
-                                    </span>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
+                    <div class='refresh_button_area' id='refresh'><a class="click-btn btn-style2" href="#">Refresh</a></div>
+
+                    <div class='see_answer_area' id='see_answer'><a class="click-btn btn-style2" href="#">See Answer</a></div>
 
                     <div class='result_area' id='result_area'>
 
@@ -1963,6 +1673,10 @@ async function update(url, handle) {
                 } else {
                     result_area.innerHTML = 'Incorrect!';
                 }
+            }
+
+            document.getElementById('see_answer').onclick = function () {
+                result_area.textContent = answer;
             }
         });
 }
