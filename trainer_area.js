@@ -15,7 +15,7 @@ let problem_type = localStorage.getItem('current_problem_type');
 
 
 // Should've done a switch but its fine
-if (problem_type == 'Challenge Problems') {
+if (problem_type == 'Challenges') {
     update(APILINK, 'Challenges');
 }
 
@@ -44,7 +44,7 @@ if (problem_type == 'Graph Theory') {
 }
 
 if (problem_type == 'System Equations') {
-    update(APILINK, 'System Equations');
+    update(APILINK, 'SystemEquations');
 }
 
 if (problem_type == 'Tangents') {
@@ -1619,7 +1619,7 @@ async function update(url, handle) {
             div_main.innerHTML = `
                 <div class='trainer_area' id='trainer_area'>
                     <div class='problem_type_title'>
-                        ${problem.problemType}
+                        ${problem_type}
                     </div>
 
                     <div class='home_button_area'>
@@ -1660,7 +1660,7 @@ async function update(url, handle) {
 
             function refresh_function() {
                 main.innerHTML = ''
-                update(APILINK, 'Challenges');
+                update(APILINK, problem_type.replace(/\s/g, ""));
             }
 
             submit_button = document.getElementById('submit');

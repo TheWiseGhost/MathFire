@@ -28,7 +28,7 @@ if (two_pole) two_pole.onclick = () => { update_curr('Two Pole') };
 if (herons) herons.onclick = () => { update_curr("Heron's Formula") };
 if (x_intercept) x_intercept.onclick = () => { update_curr('X-intercept') };
 if (vertex) vertex.onclick = () => { update_curr('Vertex') };
-if (challenge) challenge.onclick = () => { update_curr('Challenge Problems') };
+if (challenge) challenge.onclick = () => { update_curr('Challenges') };
 if (mass_points) mass_points.onclick = () => { update_curr('Mass Points') };
 if (bases) bases.onclick = () => { update_curr('Bases') };
 if (probability) probability.onclick = () => { update_curr('Probability') };

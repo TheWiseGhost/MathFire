@@ -16,7 +16,7 @@ body {
 
 .trainer_area {
     display: grid;
-    grid-template-rows: 1fr 1.25fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.45fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 0.7fr 0.67fr 0.67fr 0.67fr;
     background-image: url('MathTeamTrainer.png');
     height: 43vw;
@@ -42,7 +42,7 @@ body {
 }
 
 .image_area {
-    grid-area: 2 / 1 / 6 / 3;
+    grid-area: 3 / 1 / 6 / 3;
     align-self: center;
     justify-self: center;
     margin-top: 5rem;
@@ -50,7 +50,7 @@ body {
 }
 
 .problem_text_area {
-    grid-area: 2 / 3 / 3 / 6;
+    grid-area: 2 / 1 / 3 / 6;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
     font-size: 1.4rem;
@@ -99,7 +99,7 @@ body {
 
 
 .problem_image {
-    width: 30rem;
+    width: 20rem;
 }
 
 .answer_input {
