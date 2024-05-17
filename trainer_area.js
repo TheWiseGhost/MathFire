@@ -179,7 +179,7 @@ if (problem_type == 'Geometry') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -308,7 +308,7 @@ if (problem_type == 'Geometry') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -407,7 +407,7 @@ if (problem_type == 'Geometry') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -568,7 +568,7 @@ if (problem_type == 'Geometry') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -676,7 +676,7 @@ if (problem_type == 'Algebra') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -776,7 +776,7 @@ if (problem_type == 'Algebra') {
 
                         <div class='home_button_area'>
                             <button class='home_button'>
-                                <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                                <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                             </button>
                         </div>
 
@@ -946,7 +946,7 @@ if (problem_type == 'Centroid') {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1075,7 +1075,7 @@ if (problem_type == 'Angle Bisector') {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1173,7 +1173,7 @@ if (problem_type == 'Two Pole') {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1334,7 +1334,7 @@ if (problem_type == "Heron's Formula") {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1433,7 +1433,7 @@ if (problem_type == "X-intercept") {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1533,7 +1533,7 @@ if (problem_type == "Vertex") {
 
                 <div class='home_button_area'>
                     <button class='home_button'>
-                        <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                        <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                     </button>
                 </div>
 
@@ -1624,7 +1624,7 @@ async function update(url, handle) {
 
                     <div class='home_button_area'>
                         <button class='home_button'>
-                            <a href='index.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
+                            <a href='trainer_portal.html'><p class='material-symbols-outlined' style='font-size: 2.4rem'>Cottage</p></a>
                         </button>
                     </div>
 
