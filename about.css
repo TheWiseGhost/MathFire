@@ -19,8 +19,12 @@ body {
     grid-template-columns: 3fr 1fr 1fr 1fr;
     height: 43vw;
     padding-top: 0;
-    margin-right: 1rem;
+    padding-right: 1rem;
+    width: 99vw;
+    background-size: 101vw;
+    background-origin: 0;
 }
+
 
 .home_area {
     grid-area: 1 / 2 / 1 / 5;
