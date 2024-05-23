@@ -12,28 +12,47 @@
 
     <body>
         <div class='profile_area' id='profile_area'>
-            <div class='username_container'>
-                Test User
-            </div>
-
-            <div class='logout_button_container'>
-                <button class="blob-btn" id='logout'>
-                    Logout
-                    <span class="blob-btn__inner">
-                        <span class="blob-btn__blobs">
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                            <span class="blob-btn__blob"></span>
-                        </span>
-                    </span>
+            <div class='home_button_container'>
+                <button class='home_button'>
+                    <a href='index.html'><p class='material-symbols-outlined' style='font-size: 3rem'>Cottage</p></a>
                 </button>
             </div>
 
-            <div class='stats_area'>
+            <div class='username_container' id='username'>
 
             </div>
 
+            <div class='logout_button_container'>
+                <a href='login.html'>
+                    <button class="blob-btn" id='logout'>
+                        Logout
+                        <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                                <span class="blob-btn__blob"></span>
+                            </span>
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+            <div class='stats_area' id='stats_area'>
+                <br>
+                <div class='stats_container'>
+                    <div class='stats_grid'>
+                        <div class='stats_grid_title' style='text-decoration: underline'>
+                            Competition
+                        </div>
+                        <div class='stats_grid_rank' style='text-decoration: underline'>
+                            Rank
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <script src='profile.js'></script>
     </body>
 </html>

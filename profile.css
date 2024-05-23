@@ -17,12 +17,12 @@ body {
 .profile_area {
     display: grid;
     grid-template-rows: 0.7fr 0.5fr 1fr 1fr;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 0.6fr 0.01fr 0.7fr 0.22fr;
     background-image: url('MathFireProfile.png');
     height: 45vw;
     padding-top: 0;
     background-size: cover;
-    padding-left: 5rem;
+    padding-left: 2rem;
     padding-right: 10rem;
 }
 
@@ -31,14 +31,12 @@ body {
     align-self: center;
     justify-self: center;
     font-family: 'Kumbh Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 600;
+    padding-left: 3rem;
+    padding-left: 3rem;
 }
 
-.home_button_area {
-    background-color: green;
-    opacity: 0.5;
-}
 
 .logout_button_container {
     grid-area: 4 / 1 / 4 / 1;
@@ -46,29 +44,53 @@ body {
     font-size: 1rem;
     align-self: top;
     justify-self: center;
+    padding-left: 3rem;
 }
 
 .stats_area {
-    grid-area: 2 / 2 / 5 / 2;
-    background-color: purple;
-    opacity: 0.5;
+    grid-area: 2 / 3 / 5 / 3;
 }
 
 
-.problem_image {
-    width: 20rem;
+.stats_container {
+    height: 5vw;
+    width: inherit;
+    padding: 0.5rem;
+    padding-right: 0rem;
+    margin-bottom: 1rem;
 }
 
-.answer_input {
+.stats_grid {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr;
+    height: 5vw;
+}
+
+.stats_grid_title {
+    grid-area: 1 / 1 / 1 / 1;
     font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 600;
     font-size: 2rem;
-    font-weight: 500;
     color: black;
-    border-color: black;
-    border-width: 0.2rem;
-    width: 14rem;
-    border-style: solid;
-    padding-left: 0.3rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.stats_grid_rank {
+    grid-area: 1 / 2 / 1 / 2;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--orangered);
+    align-self: center;
+    justify-self: center;
+}
+
+
+.home_button_container {
+    grid-area: 1 / 1 / 1 / 1;
+    padding-top: 2rem;
 }
 
 
