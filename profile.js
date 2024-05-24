@@ -8,7 +8,7 @@ const main = document.getElementById('stats_area');
 
 let user = localStorage.getItem('user');
 let username = document.getElementById('username');
-username.innerHTML = user;
+username.innerHTML += user;
 
 
 async function update_stats(url){
