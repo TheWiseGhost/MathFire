@@ -8,9 +8,12 @@
     --lightorange: #FD9C33;
 }
 
+*::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+}
 
 body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
+ /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 

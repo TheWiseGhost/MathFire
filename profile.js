@@ -16,24 +16,22 @@ async function update_stats(url){
     const res = await fetch(url);
     const data = await res.json();
     data.forEach((element) => {
-        if (element.status == 'completed') {
-            for (var i = 0; i < element.leaderboard_names.length; i++) {
-                if (user == element.leaderboard_names[i]) {
-                    div_main = document.createElement('div');
-                    div_main.innerHTML = `
-                        <div class='stats_container'>
-                            <div class='stats_grid'>
-                                <div class='stats_grid_title'>
-                                    ${element.title}
-                                </div>
-                                <div class='stats_grid_rank'>
-                                    ${i+1}
-                                </div>
+        for (var i = 0; i < element.leaderboard_names.length; i++) {
+            if (user == element.leaderboard_names[i]) {
+                div_main = document.createElement('div');
+                div_main.innerHTML = `
+                    <div class='stats_container'>
+                        <div class='stats_grid'>
+                            <div class='stats_grid_title'>
+                                ${element.title}
+                            </div>
+                            <div class='stats_grid_rank'>
+                                ${i+1}
                             </div>
                         </div>
-                    `
-                    main.appendChild(div_main);
-                };
+                    </div>
+                `
+                main.appendChild(div_main);
             };
         };
     });
