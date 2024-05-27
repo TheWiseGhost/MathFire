@@ -23,6 +23,7 @@ checkbox.onclick = () => {
 competitions(APILINK);
 
 async function competitions(url){
+    main.innerHTML = '';
     div_loading = document.createElement('div');
     div_loading.innerHTML = `
         <p class='filter_by' style='align-self: center; padding-left: 0rem'>Processing your request...Please wait at least 1 minute</p>

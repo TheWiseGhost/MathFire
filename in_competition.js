@@ -4,6 +4,7 @@ const nav_comp = document.getElementById('nav_comp');
 const nav_leaderboard = document.getElementById('nav_leaderboard');
 const main = document.getElementById('main_element');
 const title = document.getElementById('title');
+const head_title = document.getElementById('head_title')
 
 const APILINK = 'https://mathfirebackend.onrender.com/'
 //const APILINK = 'http://localhost:8000/'
@@ -63,6 +64,7 @@ async function update_info(url) {
         `
         main.appendChild(div_main);
         title.innerHTML = element.title;
+        head_title.innerHTML = element.title;
     });
 }
 

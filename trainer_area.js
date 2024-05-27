@@ -1613,11 +1613,11 @@ async function update(url, handle) {
             </div>
         </div>
     `
+    main.appendChild(div_loading);
     let id = await set_problem(url, handle);
     url = url + "challenges/" + id;
     console.log(url);
     console.log("id = " + id);
-    main.appendChild(div_loading);
     fetch(url)
         .then(res => res.json())
         .then(function (problem) {
