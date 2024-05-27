@@ -25,7 +25,7 @@ competitions(APILINK);
 async function competitions(url){
     div_loading = document.createElement('div');
     div_loading.innerHTML = `
-        <p class='filter_by'>Processing your request</p>
+        <p class='filter_by' style='align-self: center; padding-left: 0rem'>Processing your request...Please wait at least 1 minute</p>
     `;
     main.appendChild(div_loading);
     url = url + 'competitions_search';

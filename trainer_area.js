@@ -1605,15 +1605,25 @@ async function set_problem(url, handle) {
 }
 
 async function update(url, handle) {
+    let div_loading = document.createElement('div');
+    div_loading.innerHTML = `
+        <div class='trainer_area' id='trainer_area'>
+            <div class='problem_type_title' style='padding-left: 3rem'>
+                Loading, please wait...
+            </div>
+        </div>
+    `
     let id = await set_problem(url, handle);
     url = url + "challenges/" + id;
     console.log(url);
-    console.log("id = " + id)
+    console.log("id = " + id);
+    main.appendChild(div_loading);
     fetch(url)
         .then(res => res.json())
         .then(function (problem) {
             console.log(problem);
             img = problem.img;
+            main.innerHTML = ''
             answer = problem.answer;
             div_main = document.createElement('div');
             div_main.innerHTML = `

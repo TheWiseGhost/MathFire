@@ -12,7 +12,7 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
     url = url + actionUrl;
     document.getElementById(formId).addEventListener("submit", function(event) {
         event.preventDefault();
-        title.innerHTML = 'Processing your request...';
+        title.innerHTML = 'Processing your request...Please wait at least 1 minute';
 
         if (formId == 'registerForm') {
             username = document.getElementById('registeremail');
