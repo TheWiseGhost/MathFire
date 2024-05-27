@@ -37,6 +37,7 @@ function handleFormSubmit(url, actionUrl, formId, callback) {
             callback(data);
         })
         .catch(error => console.error('Error:', error));
+        title.innerHTML = `<span>Log In </span><span>Sign Up</span>`
     });
 }
 
@@ -63,6 +64,7 @@ register_button.onclick = () => {
     handleFormSubmit(APILINK, "/action/register", 'registerForm', function(response) {
         if (response.message == 'ok') {
             alert("Welcome to MathFire! Please login with your new account");
+            window.location.href = 'login.html';
         } else if (response.message == 'emailInUse') {
             alert('That email is already registered. Please login or make a new account');
         } else {
