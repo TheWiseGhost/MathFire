@@ -23,6 +23,11 @@ checkbox.onclick = () => {
 competitions(APILINK);
 
 async function competitions(url){
+    div_loading = document.createElement('div');
+    div_loading.innerHTML = `
+        <p class='filter_by'>Processing your request</p>
+    `;
+    main.appendChild(div_loading);
     url = url + 'competitions_search';
     const res = await fetch(url);
     const data = await res.json();

@@ -6,11 +6,13 @@ const APILINK = 'https://mathfirebackend.onrender.com';
 localStorage.setItem('user', 'none');
 
 let username, password;
+let title = document.getElementById('title');
 
 function handleFormSubmit(url, actionUrl, formId, callback) {
     url = url + actionUrl;
     document.getElementById(formId).addEventListener("submit", function(event) {
         event.preventDefault();
+        title.innerHTML = 'Processing your request...';
 
         if (formId == 'registerForm') {
             username = document.getElementById('registeremail');
