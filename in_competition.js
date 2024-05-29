@@ -191,44 +191,66 @@ async function update_leaderboard(url){
 
 
 async function update_score(url) {
-    if (localStorage.getItem('comp_status') == 'active') {
-        main.innerHTML = ''
-        url = url + 'competition/' + 'upload/' + localStorage.getItem('competitionId');
-        fetch(url)
-        .then(res => res.json())
-        .then(() => {
-            div_main = document.createElement('div');
+    let already_done = false;
+    const competitionId = localStorage.getItem('competitionId');
+    const user = localStorage.getItem('user');
+    const comp_status = localStorage.getItem('comp_status');
+    const first_url = url + 'competition/' + competitionId;
+
+    fetch(first_url)
+    .then(res => res.json())
+    .then(element => {
+        for (let i = 0; i < element.leaderboard_names.length; i++) {
+            if (element.leaderboard_names[i] === user) {
+                already_done = true;
+                break;
+            }
+        }
+
+        if (comp_status === 'active' && !already_done) {
+            main.innerHTML = '';
+            const upload_url = url + 'competition/upload/' + competitionId;
+
+            const div_main = document.createElement('div');
             div_main.innerHTML = `
                 <div class='in_box_title'>
                     Uploading Score...
                 </div>
-            `
+            `;
             main.appendChild(div_main);
-        });
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({'user': localStorage.getItem('user') , "score": localStorage.getItem('correct'), "id": localStorage.getItem('competitionId')})
-        })
-        .then(res => res.json())
-        .then(response => {
-            if (response.message == 'ok') {
-                alert("Competition submitted successfully!");
-                localStorage.setItem('in_comp_status', 'leaderboard');
-                update_nav_buttons();
-                update_leaderboard(APILINK);
-            } else {
-                // Registration failed, display error message
-                alert("Competition submission failed. Please try again.");
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    } else {
-        alert("This competition has already been completed. Check the competition portal for active competitions or check the leaderboard to view this competition's results");
-    }
+            return fetch(upload_url, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'user': user,
+                    'score': localStorage.getItem('correct'),
+                    'id': competitionId
+                })
+            });
+        } else if (comp_status != 'active') {
+            throw new Error("This competition has already been completed. Check the competition portal for active competitions or check the leaderboard to view this competition's results");
+        } else {
+            throw new Error("You've already submitted this competition");
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        if (response.message === 'ok') {
+            alert("Competition submitted successfully!");
+            localStorage.setItem('in_comp_status', 'leaderboard');
+            update_nav_buttons();
+            update_leaderboard(APILINK);
+        } else {
+            alert("Competition submission failed. Please try again.");
+        }
+    })
+    .catch(error => {
+        alert(error.message);
+        console.error('Error:', error);
+    });
 }
 
